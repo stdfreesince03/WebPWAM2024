@@ -37,13 +37,14 @@
                     <a href="#" class="btn secondary">Sign Up</a>
                     <a href="#" class="btn primary">Login</a>
                 </div>
-                <a  id="hamburger-dropdown"><img src="./assets/images/hamburger.svg" alt="SidebarDropdown"></a>
+                <a onclick="showSideBar()" id="hamburger-dropdown"><img src="./assets/images/hamburger.svg" alt="SidebarDropdown"></a>
             </div>
 
         </div>
     </header>
     <div class="sidebar-container">
         <ul class="sidebar">
+            <li><a href="#" id="sidebar-close"><img src="./assets/images/sidebarX.svg" alt="SideBarClose"></a></li>
             <li><a href="#" data-page="home">Home</a></li>
             <li><a href="#"  data-page="courses">Courses</a></li>
             <li><a href="#"  data-page="about">About Us</a></li>
@@ -53,6 +54,32 @@
     </div>
 
     <script>
+        function showSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+        }
+
+        document.getElementById('hamburger-dropdown').addEventListener('click',(e)=>{
+            e.stopPropagation();
+            showSideBar();
+        });
+
+        function closeSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+
+        document.getElementById('sidebar-close').addEventListener('click',(e)=>{
+            e.stopPropagation();
+            closeSideBar();
+        });
+
+        window.addEventListener('resize',()=>{
+            const sidebar = document.querySelector('.sidebar');
+            if(window.innerWidth >= 595){
+                sidebar.style.display ='none'
+            }
+        })
 
     </script>
 
