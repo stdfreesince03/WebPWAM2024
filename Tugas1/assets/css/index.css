@@ -34,6 +34,10 @@ body {
     padding: 1rem 1.5vw;
 }
 
+.mobile-right-header{
+    display:flex;
+}
+
 .logo {
     margin-right: 1rem;              /* Adds space to the right of the logo */
 }
@@ -112,7 +116,7 @@ body {
 }
 
 .sidebar {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -125,6 +129,13 @@ body {
     padding: 1.5rem;
     overflow-y: auto;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+#hamburger-dropdown{
+    display:none;
+    position: relative;   /* Ensures relative positioning for fine adjustments */
+    top: -0.6rem;         /* Moves the icon slightly upwards */
+    padding: 0.2rem;
 }
 
 /* Link Styling Inside Sidebar */
@@ -166,6 +177,20 @@ main {
    }
 }
 
+@media(max-width:595px){
+
+    .nav-links {
+        display: none;
+    }
+
+    #hamburger-dropdown {
+        display: flex;
+    }
+    .auth-buttons{
+        align-self:center;
+    }
+}
+
 
 @media (max-width: 650px) {
     .logo img {
@@ -181,6 +206,11 @@ main {
         position:relative;
         right:1rem;
         padding: 0.4rem 0.6rem;
+    }
+
+    .auth-buttons .btn {
+        font-size: 0.4rem;
+        padding: 0.1rem 0.3rem;
     }
 
 }
