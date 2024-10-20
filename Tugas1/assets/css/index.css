@@ -1,4 +1,4 @@
-/* General Styles */
+
 
 .index * {
     box-sizing: border-box;
@@ -141,7 +141,7 @@
     padding: 0.2rem;
 }
 
-/* Link Styling Inside Sidebar */
+
 .index .sidebar a {
     color: black;
     font-family: 'Helvetica Neue', sans-serif;
@@ -278,7 +278,7 @@
     }
 }
 
-/* Large Screens - Min 2000px */
+
 @media (min-width: 2000px) {
     .index .header-container {
         padding: 2rem 3vw;

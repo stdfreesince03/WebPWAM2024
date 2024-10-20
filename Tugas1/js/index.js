@@ -1,4 +1,4 @@
-import { loadPage, handleRouteChange, setupNavigation } from './router.js';
+import {setupNavigation } from './router.js';
 
 function showSideBar(){
     const sidebar = document.querySelector('.sidebar');

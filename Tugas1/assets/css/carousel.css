@@ -1,21 +1,23 @@
-/* carousel.css */
+
 .carousel-container {
-    width: 50%;
+    width: 30%;
     overflow: hidden;
     padding: 1rem 0;
     display: flex;
     margin-left:auto;
     margin-right:auto;
-    margin-top: 4rem;
     align-items: center;
     border-radius: 0.35rem;
     border:#bb99fe 0.2rem solid;
-    background-color: #f7f7f8; /* Light gray background */
+    background-color: #f7f7f8;
+    position:relative;
+    top:2rem;
+
 }
 .separator{
     width: 0.05em;
-    height: 5em; /* Adjust height as needed */
-    background-color: #9f79e6; /* Gray color for the separator */
+    height: 5em;
+    background-color: #9f79e6;
     opacity: 0.6;
 }
 .carousel-slide {
@@ -56,3 +58,13 @@
         height: 30px;
     }
 }
+
+@media (max-width: 498px) {
+    .carousel-slide img {
+        height: 25px;
+    }
+    .carousel-container{
+       margin-top: 2rem;
+    }
+}
+
