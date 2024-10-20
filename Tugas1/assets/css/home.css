@@ -24,7 +24,7 @@
 }
 
 .home-page .highlight {
-    color: #ff9404;
+    color: #bb99fe;
     font-weight: bold;
 }
 
@@ -39,6 +39,7 @@
     color: #333;
     margin: 1rem 0 2rem 0;
 }
+
 
 /* Buttons */
 .home-page .main-nav-buttons {
@@ -56,12 +57,12 @@
 }
 
 .home-page .btn.explore {
-    background-color: #ff9404;
+    background-color: #9f79e6;
     color: white;
 }
 
 .home-page .btn.explore:hover {
-    background-color: #e68303;
+    background-color: #9f79e6;
 }
 
 .home-page .btn.pricing {
