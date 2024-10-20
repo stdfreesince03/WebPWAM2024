@@ -1,10 +1,9 @@
 
-
 .index * {
     box-sizing: border-box;
 }
 
-.index body {
+body {
     background-color: #f7f7f8;
     overflow-y: auto;
     margin: 0;
