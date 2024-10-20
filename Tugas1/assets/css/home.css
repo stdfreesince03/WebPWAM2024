@@ -71,6 +71,56 @@
     border: 1px solid #ccc;
 }
 
+#sparkle-container {
+    position: relative;  /* Makes it easier to position child elements */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Aligns items to the left */
+}
+
+#slogan-sparkle {
+    position: absolute;
+    top: -1.5rem;      /* Adjusts vertical position */
+    left: -1.5rem;     /* Adjusts horizontal position */
+    width: 2.5rem;     /* Adjust size as needed */
+    z-index: 1;        /* Ensures it appears above other elements */
+}
+
+@media (max-width: 566px) {
+    #slogan-sparkle {
+        width: 2rem;       /* Makes it smaller */
+        top: -2rem;        /* Adjusts vertical position */
+        left: 2.5rem;     /* Moves slightly to the right */
+    }
+}
+
+.main-slogan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.6rem 0.25rem 0.8rem;
+    z-index: 0;       /* Ensures the sparkle icon appears above */
+}
+
+.main-slogan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.6rem 0.25rem 0.8rem;
+}
+
+.lightning-icon {
+    width: 2.5rem;
+    margin-right: 0.5rem;  /* Adds space between the lightning icon and the text */
+    /*position: relative;*/
+    /*top: 0.4rem;  !* Adjusts the vertical alignment with the text *!*/
+    align-self: center;
+}
+
 .home-page .btn.pricing:hover {
     background-color: #f0f0f0;
 }
