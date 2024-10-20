@@ -138,7 +138,7 @@ main{
 
 @media (max-width: 463px) {
     #stock-home-img{
-        width:200px;
+
         left:-0.3rem;
     }
 }
@@ -199,6 +199,8 @@ main{
         margin-bottom: 0.5rem;
     }
 }
+
+
 
 @media (min-width: 2000px) {
     .home-page h1 {
