@@ -27,4 +27,5 @@ window.addEventListener('resize',()=>{
     }
 });
 
+
 document.addEventListener('DOMContentLoaded', setupNavigation);

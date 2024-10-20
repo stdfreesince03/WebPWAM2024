@@ -32,11 +32,16 @@ export function setupNavigation(){
     }));
 
     window.addEventListener('popstate',(e)=>{
-        const path = window.location.pathname.replace('/','');
-        loadPage(path);
+        const path = window.location.pathname.replace('/','') ||'home';
+        if(path === '/' || path===''){
+            loadPage('home')
+        }else{
+            loadPage(path);
+        }
     });
 
     const initialPage = window.location.pathname.replace('/','') || 'home';
     loadPage(initialPage);
 }
+
 
