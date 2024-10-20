@@ -11,6 +11,7 @@ export function loadCarousel() {
     }
 }
 
+
 function initCarousel() {
     const carouselSlide = document.querySelector('.carousel-slide');
     const slideChildren = Array.from(carouselSlide.children);
