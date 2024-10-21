@@ -2,7 +2,7 @@ import { loadCarousel } from '../components/carousel.js';
 
 console.log('Home page script loaded and executed.');
 
-// Wait for the DOM to be fully ready
+
 (async function initHome() {
     const mainContainer = document.querySelector('.carousel-embed');
     if (mainContainer) {
