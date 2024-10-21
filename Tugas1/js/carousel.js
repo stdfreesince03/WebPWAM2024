@@ -5,7 +5,7 @@ export function loadCarousel() {
             .then(response => response.text())
             .then(html => {
                 carouselContainer.innerHTML = html;
-                initCarousel();  // Initialize the carousel animation
+                initCarousel();
             })
             .catch(error => console.error('Error loading carousel:', error));
     }
