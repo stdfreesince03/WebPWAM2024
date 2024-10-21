@@ -28,4 +28,4 @@ window.addEventListener('resize',()=>{
 });
 
 
-document.addEventListener('DOMContentLoaded', setupNavigation);
+document.addEventListener('DOMContentLoaded', await setupNavigation);

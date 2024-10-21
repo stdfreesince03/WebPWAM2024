@@ -1,16 +1,26 @@
-export function loadCarousel() {
+export async function loadCarousel() {
+    console.log('fuck');
+    console.log('pig latin');
     const carouselContainer = document.querySelector('.carousel-embed');
-    if (carouselContainer) {
-        fetch('../components/carousel.html')
-            .then(response => response.text())
-            .then(html => {
-                carouselContainer.innerHTML = html;
-                initCarousel();
-            })
-            .catch(error => console.error('Error loading carousel:', error));
+
+    if (!carouselContainer) return;
+
+    try {
+        const response = await fetch('./components/carousel.html');
+        if (!response.ok) {
+            console.log('jancuk');
+            throw new Error(`Failed to load carousel.html: ${response.status}`);
+        }
+        const html = await response.text();
+        carouselContainer.innerHTML = html;
+        console.log('Carousel HTML loaded:', html);
+
+        initCarousel();
+
+    } catch (error) {
+        console.error('Error loading carousel:', error);
     }
 }
-
 
 function initCarousel() {
     const carouselSlide = document.querySelector('.carousel-slide');

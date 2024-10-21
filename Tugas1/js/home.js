@@ -1,8 +1,14 @@
-import { loadCarousel } from './carousel.js';
+import { loadCarousel } from '../components/carousel.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+console.log('Home page script loaded and executed.');
+
+// Wait for the DOM to be fully ready
+(async function initHome() {
     const mainContainer = document.querySelector('.carousel-embed');
     if (mainContainer) {
-        loadCarousel(mainContainer);
+        await loadCarousel(mainContainer);
+        console.log('Carousel initialized.');
+    } else {
+        console.error('.carousel-embed not found!');
     }
-});
+})();
