@@ -216,23 +216,28 @@
         font-size: 1.76rem;
     }
 }
-
+.home-content-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+}
 .benefits-section {
     padding: 2rem 1.5vw;
     margin-top: 5rem;
     background-color: #f7f7f8;
+
 }
 
 .benefits-header {
     text-align: left;
     max-width: 1200px;
-    margin: 0 auto 2rem;
-    padding-left: 1rem;
+    margin-bottom: 2rem;
 }
 
 .benefits-header h2 {
     font-size: 2rem; /* Smaller font size */
     margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 .benefits-header p {
@@ -241,6 +246,7 @@
     /*max-width: 600px;*/
     margin: 0.5rem 0;
     line-height: 1.5;
+    text-align: left;
 }
 
 
@@ -252,7 +258,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
     gap: 1.5rem;
-    max-width: 1200px;
+    width:100%;
+    /*max-width: 1200px;*/
     margin: 0 auto;
 }
 
@@ -310,10 +317,6 @@
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    .benefits-header {
-        padding-left: 0.5rem;
-    }
-
     .benefits-header h2 {
         font-size: 1.75rem;
     }
@@ -338,8 +341,6 @@
 
     .benefits-header p {
         font-size: 0.85rem;
-        max-width: 400px;
-        margin: 0 auto;
     }
 }
 
@@ -372,14 +373,13 @@
     margin-bottom: 1.5rem;
 }
 
-.section-title {
-    font-size: 2rem;
+.course-section-title {
+    font-size: 1.85rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 1rem;
 }
 
 .courses-description {
-    max-width: 600px;
     margin: 0;
     font-size: 0.95rem;
     color: #666;
@@ -387,20 +387,21 @@
 }
 
 .view-all-btn {
-    padding: 0.3rem 0.7rem; /* Smaller padding */
+    padding: 0.5rem 0.7rem; /* Smaller padding */
     font-size: 0.85rem; /* Smaller font size */
-    background-color: #f7f7f8;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 0.3rem;
+    background-color: white;
+    color:black;
+    border: none; /* Re
+    /*border-radius: 0.3rem;*/
+    margin-top:1.25rem;
     margin-left: auto; /* Pushes button to the right */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    /*transition: background-color 0.3s, color 0.3s;*/
 }
 
 .view-all-btn:hover {
-    background-color: #e1e1e1;
-    color: #000;
+    background-color: white;
+    border:0.0001rem solid #9f79e6;
 }
 
 /* Courses List Grid */
