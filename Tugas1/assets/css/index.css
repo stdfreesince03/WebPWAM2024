@@ -30,7 +30,7 @@ body {
 
 /* Header Styles */
 .index .header {
-    background-color: inherit;
+    background-color: #f3f0f8;
     border-bottom: 1px solid transparent;
     padding: 1rem 1.5vw;
 }
@@ -51,6 +51,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #f3f0f8;
 }
 
 .index .nav-list {
@@ -169,7 +170,7 @@ body {
 }
 
 .index main {
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     min-height: 70vh;
 }
 
