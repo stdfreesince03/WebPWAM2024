@@ -4,43 +4,43 @@ const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
 
 // Get controls
-const car1Slider = document.getElementById('car1');
-const car2Slider = document.getElementById('car2');
+const carSelect = document.getElementById('carSelect');
 const speedSlider = document.getElementById('speed');
-const car1Name = document.getElementById('car1Name');
-const car2Name = document.getElementById('car2Name');
+const speedValue = document.getElementById('speedValue');
+const carName = document.getElementById('carName');
+const carImage = document.getElementById('carImage');
 
-// Car options with predefined masses (in kg)
+// Car options with images and masses
 const cars = [
-    { name: 'Car 1', mass: 1000 },
-    { name: 'Car 2', mass: 1200 },
-    { name: 'Car 3', mass: 1400 },
-    { name: 'Car 4', mass: 1600 },
-    { name: 'Car 5', mass: 1800 },
-    { name: 'Car 6', mass: 2000 }
+    { name: 'Car 1', mass: 1000, image: 'car_1.png' },
+    { name: 'Car 2', mass: 1200, image: 'car_2.png' },
+    { name: 'Car 3', mass: 1400, image: 'car_3.png' },
+    { name: 'Car 4', mass: 1600, image: 'car_4.png' },
+    { name: 'Car 5', mass: 1800, image: 'car_5.png' },
+    { name: 'Car 6', mass: 2000, image: 'car_6.png' }
 ];
 
 // Simulation variables
-let speed = parseFloat(speedSlider.value); // Initial speed
-let car1 = cars[0]; // Initial car 1
-let car2 = cars[0]; // Initial car 2
+let speed = parseFloat(speedSlider.value) * 1000 / 3600; // Convert to m/s
+let selectedCar = cars[0]; // Initial car
 let carX = 0, carY = canvas.height - 50; // Start position
 let isJumping = false;
 
-// Update car selection labels
-car1Slider.addEventListener('input', updateCarSelection);
-car2Slider.addEventListener('input', updateCarSelection);
+// Update car selection
+carSelect.addEventListener('input', updateCarSelection);
 speedSlider.addEventListener('input', updateSpeed);
 
+// Function to update car selection
 function updateCarSelection() {
-    car1 = cars[parseInt(car1Slider.value) - 1];
-    car2 = cars[parseInt(car2Slider.value) - 1];
-    car1Name.textContent = car1.name;
-    car2Name.textContent = car2.name;
+    selectedCar = cars[parseInt(carSelect.value) - 1];
+    carName.textContent = selectedCar.name;
+    carImage.src = `./images/${selectedCar.image}`;
 }
 
+// Function to update speed
 function updateSpeed() {
-    speed = parseFloat(speedSlider.value);
+    speed = parseFloat(speedSlider.value) * 1000 / 3600; // Convert to m/s
+    speedValue.textContent = speedSlider.value;
 }
 
 // Convert degrees to radians
@@ -92,10 +92,8 @@ function animateJump() {
 
 // Draw the car (simple rectangle)
 function drawCar(x, y) {
-    ctx.fillStyle = 'red'; // Car 1 color
-    ctx.fillRect(x, y, 50, 20);
-    ctx.fillStyle = 'blue'; // Car 2 color
-    ctx.fillRect(x + 60, y, 50, 20); // Second car
+    ctx.fillStyle = 'red';
+    ctx.fillRect(x, y, 50, 20); // Simple car rectangle
 }
 
 // Check the outcome of the jump
@@ -104,10 +102,14 @@ function checkJumpOutcome(finalX) {
     const gapWidth = 100; // Example gap width
 
     if (finalX >= gapStart && finalX <= gapStart + gapWidth) {
-        alert('Cars fell into the gap!');
+        alert('Car fell into the gap!');
     } else if (finalX > gapStart + gapWidth) {
-        alert('Cars successfully cleared the gap!');
+        alert('Car successfully cleared the gap!');
     } else {
-        alert('Cars did not reach the gap.');
+        alert('Car did not reach the gap.');
     }
 }
+
+// Initial car and speed setup
+updateCarSelection();
+updateSpeed();
