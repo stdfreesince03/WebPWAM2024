@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Jumping Over a Ridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Car Jumping Over a Ridge</h1>
+<div id="controls">
+<!--  <label>Select Car :-->
+<!--    <input type="range" id="car1" min="1" max="6" step="1" value="1">-->
+<!--    <span id="car1Name">Car 1</span>-->
+<!--  </label>-->
+  <select id="carSelect">
+    <option value="1">Car 1</option>
+    <option value="2">Car 2</option>
+    <option value="3">Car 3</option>
+    <option value="4">Car 4</option>
+    <option value="5">Car 5</option>
+    <option value="6">Car 6</option>
+  </select>
+  <label>Speed:
+    <input type="range" id="speed" min="10" max="100" step="5" value="50"> m/s
+  </label>
+</div>
+<canvas id="jumpCanvas">
+</canvas>
+<script src="app.js"></script>
+</body>
+</html>
