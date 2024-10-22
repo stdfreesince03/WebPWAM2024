@@ -162,7 +162,7 @@ body {
 }
 
 .index .sidebar a:hover {
-    background-color: rgba(255, 144, 4, 0.1);
+    background-color:#e6ccff;
 }
 
 .index .sidebar li:last-child {
