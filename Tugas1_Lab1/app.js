@@ -10,12 +10,10 @@ const speedValue = document.getElementById('speedValue');
 const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 
-const ledgeHeight = 20; // Height of the ledge
-const ledgeWidth = 100; // Width of the ledge
-const ledgeX = 100; // X position of the ledge
-const ledgeY = canvas.height - 50; // Y position of the ledge (starting platform)
-
-// Other existing variables...
+const ledgeWidth = canvas.width * 0.3; // 20% of the canvas width
+const ledgeX = 0; // Starting from the left
+const ledgeHeight = canvas.height * 0.6;
+const ledgeY = canvas.height - ledgeHeight; // Adjust Y position based on ledge height
 
 // Function to draw the grassy ledge
 function drawGrassyLedge() {
@@ -28,6 +26,7 @@ function drawGrassyLedge() {
         ctx.fillRect(ledgeX + i, ledgeY - 5, 5, 5); // Little grass blades
     }
 }
+
 
 // Car options with images and masses
 const cars = [
