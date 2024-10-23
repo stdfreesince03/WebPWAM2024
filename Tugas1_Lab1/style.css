@@ -15,14 +15,14 @@ body {
     margin: 2rem 1rem; /* Adjusted margins for better alignment */
 }
 
-#gameHeader{
+#gameHeader {
     margin: auto auto 1.5rem;
     font-size: 3.5vw;
     padding-left: 20vw;
-    position :relative;
+    position: relative;
 }
 
-#carName{
+#carName {
     margin-bottom: 2rem;
 }
 
@@ -56,4 +56,19 @@ main {
     align-items: flex-start;
     width: 90%; /* Prevents overflow */
     gap: 1rem; /* Adds space between controls and canvas */
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#startButton:hover {
+    background-color: #45a049;
 }

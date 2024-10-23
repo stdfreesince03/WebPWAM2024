@@ -3,20 +3,36 @@ const ctx = canvas.getContext('2d');
 
 // Set up the canvas for higher DPI
 function setHighDPI(canvas, context, scaleFactor = 2) {
-    // Store original dimensions
     const originalWidth = canvas.width;
     const originalHeight = canvas.height;
 
-    // Increase canvas size based on the scale factor
     canvas.width = originalWidth * scaleFactor;
     canvas.height = originalHeight * scaleFactor;
-
-    // Set CSS size to match original dimensions (visual size)
     canvas.style.width = `${originalWidth}px`;
     canvas.style.height = `${originalHeight}px`;
 
-    // Scale the drawing context
     context.scale(scaleFactor, scaleFactor);
+    recalculateLedgePositions();
+}
+
+// Variables for ledges
+let ledgeWidth1, ledgeX1, ledgeHeight1, ledgeY1;
+let ledgeWidth2, ledgeX2, ledgeHeight2, ledgeY2;
+
+// Recalculate ledge positions after scaling
+function recalculateLedgePositions() {
+    ledgeWidth1 = canvas.width * 0.35 / 2;
+    ledgeX1 = 0;
+    ledgeHeight1 = canvas.height * 0.5 / 2;
+    ledgeY1 = canvas.height / 2 - ledgeHeight1;
+
+    ledgeWidth2 = canvas.width * 0.3 / 2;
+    ledgeX2 = canvas.width * 0.7 / 2;
+    ledgeHeight2 = canvas.height * 0.3 / 2;
+    ledgeY2 = canvas.height / 2 - ledgeHeight2;
+
+    console.log(`Ledge 1 - X: ${ledgeX1}, Y: ${ledgeY1}, Width: ${ledgeWidth1}, Height: ${ledgeHeight1}`);
+    console.log(`Ledge 2 - X: ${ledgeX2}, Y: ${ledgeY2}, Width: ${ledgeWidth2}, Height: ${ledgeHeight2}`);
 }
 
 // Initialize the canvas with higher DPI
@@ -28,28 +44,7 @@ const speedSlider = document.getElementById('speed');
 const speedValue = document.getElementById('speedValue');
 const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
-
-// Variables for ledges
-let ledgeWidth1 = canvas.width * 0.2;
-let ledgeX1 = 0;
-let ledgeHeight1 = canvas.height * 0.8;
-let ledgeY1 = canvas.height - ledgeHeight1;
-
-let ledgeWidth2 = canvas.width * 0.3;
-let ledgeX2 = canvas.width * 0.7; // Set it to 70% from the left
-let ledgeHeight2 = canvas.height * 0.3;
-let ledgeY2 = canvas.height - ledgeHeight2;
-
-// Function to draw the grassy ledges
-function drawGrassyLedge() {
-    // Draw the first ledge
-    ctx.fillStyle = '#228B22'; // Green color for the grass
-    ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
-
-    // Draw the second ledge
-    ctx.fillStyle = '#228B22'; // Green color for the second ledge
-    ctx.fillRect(ledgeX2, ledgeY2, ledgeWidth2, ledgeHeight2);
-}
+const startButton = document.getElementById('startButton');
 
 // Car options with images and masses
 const cars = [
@@ -61,44 +56,75 @@ const cars = [
     { name: 'Car 6', mass: 2000, image: 'car_6.png' }
 ];
 
-// Simulation variables
-let speed = parseFloat(speedSlider.value) * 1000 / 3600; // Convert to m/s
-let selectedCar = cars[0]; // Initial car
-let carX = 0, carY = canvas.height - 50; // Start position
+let speed = parseFloat(speedSlider.value) * 1000 / 3600;
+let selectedCar = cars[0];
+let carX = 0, carY = canvas.height - 50;
 let isJumping = false;
+let carImg = new Image();
+let phase = 1; // 1 for straight motion, 2 for projectile
+let initialVelocityX = 0, initialVelocityY = 0;
 
-// Update car selection
-carSelect.addEventListener('input', updateCarSelection);
-speedSlider.addEventListener('input', updateSpeed);
+// Preload the car image
+function preloadCarImage() {
+    carImg.src = `./images/${selectedCar.image}`;
+    carImg.onload = () => {
+        drawScene();
+    };
+}
+
+// Function to draw the grassy ledges
+function drawGrassyLedge() {
+    ctx.fillStyle = '#228B22';
+    ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
+    ctx.fillRect(ledgeX2, ledgeY2, ledgeWidth2, ledgeHeight2);
+}
+
+// Function to draw the car at a specific position
+function drawCar(x, y) {
+    const carWidth = canvas.width * 0.05; // 5% of canvas width
+    const carHeight = canvas.height * 0.05; // 5% of canvas height
+    ctx.drawImage(carImg, x, y, carWidth, carHeight);
+}
 
 // Function to update car selection
 function updateCarSelection() {
     selectedCar = cars[parseInt(carSelect.value) - 1];
     carName.textContent = selectedCar.name;
     carImage.src = `./images/${selectedCar.image}`;
-
+    preloadCarImage();
     positionCarOnLedge();
 }
 
 // Function to update speed
 function updateSpeed() {
-    speed = parseFloat(speedSlider.value) * 1000 / 3600; // Convert to m/s
+    speed = parseFloat(speedSlider.value) * 1000 / 3600;
     speedValue.textContent = speedSlider.value;
 }
 
-// Convert degrees to radians
-function toRadians(degrees) {
-    return degrees * (Math.PI / 180);
+// Function to position the car on the first ledge
+function positionCarOnLedge() {
+    carX = ledgeX1 + (ledgeWidth1 * 0.2);
+    carY = ledgeY1 - (canvas.height * 0.04);
+
+    console.log(`Initial Car Position - X: ${carX}, Y: ${carY}`);
+    drawScene();
+}
+
+// Function to draw the entire scene
+function drawScene() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrassyLedge();
+    drawCar(carX, carY);
 }
 
 // Start the jump
 function startJump() {
-    // Reset car position
-    carX = 0;
-    carY = canvas.height - 50;
-
-    // Start jumping animation
+    carX = ledgeX1 + (ledgeWidth1 * 0.2);
+    carY = ledgeY1 - (canvas.height * 0.04);
+    phase = 1; // Reset to straight motion
     isJumping = true;
+    initialVelocityX = speed; // Initial velocity in X direction for projectile
+    initialVelocityY = 0; // Start with no vertical velocity
     animateJump();
 }
 
@@ -107,26 +133,35 @@ function animateJump() {
     if (!isJumping) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrassyLedge();
 
-    // Calculate the new position using projectile physics
-    const angle = toRadians(45); // Fixed launch angle
-    const time = (carX / speed); // Time since start
-    const gravity = 9.8; // Gravity in m/s²
+    // Phase 1: Move straight along the ledge
+    if (phase === 1) {
+        carX += 2; // Adjust the increment for speed
+        if (carX >= ledgeWidth1 - (canvas.width * 0.05)) {
+            phase = 2; // Switch to projectile motion
+            carX = ledgeWidth1 - (canvas.width * 0.05); // Align at ledge edge
+            initialVelocityY = speed * Math.sin(toRadians(45)); // Set initial Y velocity for projectile
+        }
+    }
 
-    // Projectile motion calculations
-    const newX = speed * Math.cos(angle) * time;
-    const newY = speed * Math.sin(angle) * time - (0.5 * gravity * Math.pow(time, 2));
+    // Phase 2: Apply projectile physics
+    if (phase === 2) {
+        const timeStep = 0.1; // Adjust for smoothness
+        const gravity = 9.8;
 
-    // Update car position
-    carX = newX;
-    carY = canvas.height - 50 - newY;
+        // Update X and Y using the current velocities
+        carX += initialVelocityX * timeStep;
+        carY -= (initialVelocityY * timeStep - 0.5 * gravity * Math.pow(timeStep, 2));
+        initialVelocityY -= gravity * timeStep; // Adjust Y velocity due to gravity
+    }
 
-    // Draw the car
+    console.log(`Car Position - X: ${carX.toFixed(2)}, Y: ${carY.toFixed(2)}`);
     drawCar(carX, carY);
 
-    // Check if the car is off screen or hit the ground
+    // Check if the car is off-screen or hits the ground
     if (carX >= canvas.width || carY >= canvas.height - 50) {
-        isJumping = false; // Stop animation if car lands
+        isJumping = false;
         checkJumpOutcome(carX);
     } else {
         requestAnimationFrame(animateJump);
@@ -135,8 +170,8 @@ function animateJump() {
 
 // Check the outcome of the jump
 function checkJumpOutcome(finalX) {
-    const gapStart = 400; // Example gap starting point
-    const gapWidth = 100; // Example gap width
+    const gapStart = 400;
+    const gapWidth = 100;
 
     if (finalX >= gapStart && finalX <= gapStart + gapWidth) {
         alert('Car fell into the gap!');
@@ -147,34 +182,13 @@ function checkJumpOutcome(finalX) {
     }
 }
 
-// Function to draw the car at a specific position
-function drawCar(x, y) {
-    const carImg = new Image();
-    carImg.src = `./images/${selectedCar.image}`;
-
-    // Draw the car image once it loads
-    carImg.onload = function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-        drawGrassyLedge(); // Redraw the grassy ledges
-
-        // Set responsive car dimensions based on canvas size
-        const carWidth = canvas.width * 0.05; // 10% of canvas width
-        const carHeight = canvas.height * 0.05; // 10% of canvas height
-
-        // Draw the car image at specified position
-        ctx.drawImage(carImg, x, y, carWidth, carHeight);
-    };
+// Convert degrees to radians
+function toRadians(degrees) {
+    return degrees * (Math.PI / 180);
 }
 
-// Function to position the car on the ledge
-function positionCarOnLedge() {
-    const carX = ledgeX1 + (ledgeWidth1 / 2) - (canvas.width * 0.1); // Center the car
-    const carY = ledgeY1 - (canvas.height * 0.04); // Position above the ledge
-
-    drawCar(carX, carY); // Draw the car at the calculated position
-}
-
-// Initial car and speed setup
-drawGrassyLedge();
-positionCarOnLedge();
-updateSpeed();
+// Initial setup
+preloadCarImage();
+carSelect.addEventListener('input', updateCarSelection);
+speedSlider.addEventListener('input', updateSpeed);
+startButton.addEventListener('click', startJump);
