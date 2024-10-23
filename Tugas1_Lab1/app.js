@@ -30,9 +30,9 @@ const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 
 // Variables for ledges
-let ledgeWidth1 = canvas.width * 0.3;
+let ledgeWidth1 = canvas.width * 0.2;
 let ledgeX1 = 0;
-let ledgeHeight1 = canvas.height * 0.6;
+let ledgeHeight1 = canvas.height * 0.8;
 let ledgeY1 = canvas.height - ledgeHeight1;
 
 let ledgeWidth2 = canvas.width * 0.3;
@@ -158,8 +158,8 @@ function drawCar(x, y) {
         drawGrassyLedge(); // Redraw the grassy ledges
 
         // Set responsive car dimensions based on canvas size
-        const carWidth = canvas.width * 0.1; // 10% of canvas width
-        const carHeight = canvas.height * 0.1; // 10% of canvas height
+        const carWidth = canvas.width * 0.05; // 10% of canvas width
+        const carHeight = canvas.height * 0.05; // 10% of canvas height
 
         // Draw the car image at specified position
         ctx.drawImage(carImg, x, y, carWidth, carHeight);
@@ -168,8 +168,8 @@ function drawCar(x, y) {
 
 // Function to position the car on the ledge
 function positionCarOnLedge() {
-    const carX = ledgeX1 + (ledgeWidth1 / 2) - (canvas.width * 0.05); // Center the car
-    const carY = ledgeY1 - (canvas.height * 0.08); // Position above the ledge
+    const carX = ledgeX1 + (ledgeWidth1 / 2) - (canvas.width * 0.1); // Center the car
+    const carY = ledgeY1 - (canvas.height * 0.04); // Position above the ledge
 
     drawCar(carX, carY); // Draw the car at the calculated position
 }

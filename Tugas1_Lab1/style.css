@@ -36,8 +36,11 @@ body {
     border: 1px solid #ccc;
     background-color: #e0f7fa;
     flex-grow: 1; /* Allows the canvas to grow and fill the remaining space */
-    height: 60vh;
-    width:40vh;/* Increased height for better view */
+    width: 100%;       /* Adjusts to the full width of its container */
+    height: auto;      /* Maintains aspect ratio */
+    margin: 0 auto;    /* Centers the canvas horizontally */
+    display: block;
+    min-height: 60vh;
 }
 
 main {
