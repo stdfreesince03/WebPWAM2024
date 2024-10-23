@@ -68,6 +68,8 @@ function updateCarSelection() {
     selectedCar = cars[parseInt(carSelect.value) - 1];
     carName.textContent = selectedCar.name;
     carImage.src = `./images/${selectedCar.image}`;
+
+    positionCarOnLedge();
 }
 
 // Function to update speed
@@ -123,11 +125,6 @@ function animateJump() {
     }
 }
 
-// Draw the car (simple rectangle)
-function drawCar(x, y) {
-    ctx.fillStyle = 'red';
-    ctx.fillRect(x, y, 50, 20); // Simple car rectangle
-}
 
 // Check the outcome of the jump
 function checkJumpOutcome(finalX) {
@@ -143,7 +140,40 @@ function checkJumpOutcome(finalX) {
     }
 }
 
+// Function to draw the car at a specific position
+function drawCar(x, y) {
+    const carImg = new Image();
+    carImg.src = `./images/${selectedCar.image}`;
+
+    // Draw the car image once it loads
+    carImg.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+        drawGrassyLedge(); // Redraw the grassy ledges
+
+        // Set responsive car dimensions based on canvas size
+        const carWidth = canvas.width * 0.1; // 10% of canvas width
+        const carHeight = canvas.height * 0.1; // 10% of canvas height
+
+        // Draw the car image at specified position
+        ctx.drawImage(carImg, x, y, carWidth, carHeight);
+    };
+}
+
+// Function to position the car on the ledge
+function positionCarOnLedge() {
+    const carX = ledgeX1 + (ledgeWidth1 / 2) - (canvas.width * 0.05); // Center the car
+    const carY = ledgeY1 - (canvas.height * 0.1); // Position above the ledge
+
+    drawCar(carX, carY); // Draw the car at the calculated position
+}
+
+
+// Event listener for car selection
+carSelect.addEventListener('input', updateCarSelection);
+
+
 // Initial car and speed setup
 drawGrassyLedge();
-updateCarSelection();
+positionCarOnLedge();
+carSelect.addEventListener('input', updateCarSelection);
 updateSpeed();
