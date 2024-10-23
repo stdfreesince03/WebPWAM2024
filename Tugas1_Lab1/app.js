@@ -1,7 +1,26 @@
-// app.js
-
 const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
+
+// Set up the canvas for higher DPI
+function setHighDPI(canvas, context, scaleFactor = 2) {
+    // Store original dimensions
+    const originalWidth = canvas.width;
+    const originalHeight = canvas.height;
+
+    // Increase canvas size based on the scale factor
+    canvas.width = originalWidth * scaleFactor;
+    canvas.height = originalHeight * scaleFactor;
+
+    // Set CSS size to match original dimensions (visual size)
+    canvas.style.width = `${originalWidth}px`;
+    canvas.style.height = `${originalHeight}px`;
+
+    // Scale the drawing context
+    context.scale(scaleFactor, scaleFactor);
+}
+
+// Initialize the canvas with higher DPI
+setHighDPI(canvas, ctx);
 
 // Get controls
 const carSelect = document.getElementById('carSelect');
@@ -27,21 +46,10 @@ function drawGrassyLedge() {
     ctx.fillStyle = '#228B22'; // Green color for the grass
     ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
 
-    ctx.fillStyle = '#32CD32'; // Lighter green for texture
-    for (let i = 0; i < ledgeWidth1; i += 10) {
-        ctx.fillRect(ledgeX1 + i, ledgeY1 - 5, 5, 5); // Little grass blades
-    }
-
     // Draw the second ledge
     ctx.fillStyle = '#228B22'; // Green color for the second ledge
     ctx.fillRect(ledgeX2, ledgeY2, ledgeWidth2, ledgeHeight2);
-
-    ctx.fillStyle = '#32CD32'; // Lighter green for texture
-    for (let i = 0; i < ledgeWidth2; i += 10) {
-        ctx.fillRect(ledgeX2 + i, ledgeY2 - 5, 5, 5); // Little grass blades
-    }
 }
-
 
 // Car options with images and masses
 const cars = [
@@ -125,7 +133,6 @@ function animateJump() {
     }
 }
 
-
 // Check the outcome of the jump
 function checkJumpOutcome(finalX) {
     const gapStart = 400; // Example gap starting point
@@ -162,18 +169,12 @@ function drawCar(x, y) {
 // Function to position the car on the ledge
 function positionCarOnLedge() {
     const carX = ledgeX1 + (ledgeWidth1 / 2) - (canvas.width * 0.05); // Center the car
-    const carY = ledgeY1 - (canvas.height * 0.1); // Position above the ledge
+    const carY = ledgeY1 - (canvas.height * 0.08); // Position above the ledge
 
     drawCar(carX, carY); // Draw the car at the calculated position
 }
 
-
-// Event listener for car selection
-carSelect.addEventListener('input', updateCarSelection);
-
-
 // Initial car and speed setup
 drawGrassyLedge();
 positionCarOnLedge();
-carSelect.addEventListener('input', updateCarSelection);
 updateSpeed();
