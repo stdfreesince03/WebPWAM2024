@@ -19,6 +19,7 @@ body {
     margin: auto auto 1.5rem;
     font-size: 3.5vw;
     padding-left: 20vw;
+    position :relative;
 }
 
 #carName{

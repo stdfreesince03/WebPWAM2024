@@ -10,20 +10,35 @@ const speedValue = document.getElementById('speedValue');
 const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 
-const ledgeWidth = canvas.width * 0.3; // 20% of the canvas width
-const ledgeX = 0; // Starting from the left
-const ledgeHeight = canvas.height * 0.6;
-const ledgeY = canvas.height - ledgeHeight; // Adjust Y position based on ledge height
+// Variables for ledges
+let ledgeWidth1 = canvas.width * 0.3;
+let ledgeX1 = 0;
+let ledgeHeight1 = canvas.height * 0.6;
+let ledgeY1 = canvas.height - ledgeHeight1;
 
-// Function to draw the grassy ledge
+let ledgeWidth2 = canvas.width * 0.3;
+let ledgeX2 = canvas.width * 0.7; // Set it to 70% from the left
+let ledgeHeight2 = canvas.height * 0.3;
+let ledgeY2 = canvas.height - ledgeHeight2;
+
+// Function to draw the grassy ledges
 function drawGrassyLedge() {
+    // Draw the first ledge
     ctx.fillStyle = '#228B22'; // Green color for the grass
-    ctx.fillRect(ledgeX, ledgeY, ledgeWidth, ledgeHeight); // Draw the ledge
+    ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
 
-    // Add grass texture (simple effect)
     ctx.fillStyle = '#32CD32'; // Lighter green for texture
-    for (let i = 0; i < ledgeWidth; i += 10) {
-        ctx.fillRect(ledgeX + i, ledgeY - 5, 5, 5); // Little grass blades
+    for (let i = 0; i < ledgeWidth1; i += 10) {
+        ctx.fillRect(ledgeX1 + i, ledgeY1 - 5, 5, 5); // Little grass blades
+    }
+
+    // Draw the second ledge
+    ctx.fillStyle = '#228B22'; // Green color for the second ledge
+    ctx.fillRect(ledgeX2, ledgeY2, ledgeWidth2, ledgeHeight2);
+
+    ctx.fillStyle = '#32CD32'; // Lighter green for texture
+    for (let i = 0; i < ledgeWidth2; i += 10) {
+        ctx.fillRect(ledgeX2 + i, ledgeY2 - 5, 5, 5); // Little grass blades
     }
 }
 
