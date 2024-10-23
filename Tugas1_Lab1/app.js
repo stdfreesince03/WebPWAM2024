@@ -10,6 +10,25 @@ const speedValue = document.getElementById('speedValue');
 const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 
+const ledgeHeight = 20; // Height of the ledge
+const ledgeWidth = 100; // Width of the ledge
+const ledgeX = 100; // X position of the ledge
+const ledgeY = canvas.height - 50; // Y position of the ledge (starting platform)
+
+// Other existing variables...
+
+// Function to draw the grassy ledge
+function drawGrassyLedge() {
+    ctx.fillStyle = '#228B22'; // Green color for the grass
+    ctx.fillRect(ledgeX, ledgeY, ledgeWidth, ledgeHeight); // Draw the ledge
+
+    // Add grass texture (simple effect)
+    ctx.fillStyle = '#32CD32'; // Lighter green for texture
+    for (let i = 0; i < ledgeWidth; i += 10) {
+        ctx.fillRect(ledgeX + i, ledgeY - 5, 5, 5); // Little grass blades
+    }
+}
+
 // Car options with images and masses
 const cars = [
     { name: 'Car 1', mass: 1000, image: 'car_1.png' },
@@ -111,5 +130,6 @@ function checkJumpOutcome(finalX) {
 }
 
 // Initial car and speed setup
+drawGrassyLedge();
 updateCarSelection();
 updateSpeed();

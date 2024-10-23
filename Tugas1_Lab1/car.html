@@ -7,19 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Car Jumping Over a Ridge</h1>
-<div id="controls">
-  <label>Select Car :
-    <input type="range" id="carSelect" min="1" max="6" step="1" value="1">
-  </label>
-  <img id="carImage" src="images/car_3.png" alt="Selected Car">
-  <span id="carName">Car 1</span>
-  <label>Speed:
-    <input type="range" id="speed" min="10" max="300" step="1" value="50"> km/h
-  </label>
-  <div>Speed: <span id="speedValue">50</span> km/h</div>
-</div>
-<canvas id="jumpCanvas"></canvas>
+<main>
+    <h1>Car Jumping Over a Ridge</h1>
+    <div class="game">
+        <div id="controls">
+            <label>Select Car :
+                <input type="range" id="carSelect" min="1" max="6" step="1" value="1">
+            </label>
+            <img id="carImage" src="images/car_3.png" alt="Selected Car">
+            <span id="carName">Car 1</span>
+            <label id="speedLabel">Speed:
+                <input type="range" id="speed" min="10" max="300" step="1" value="50"> km/h
+            </label>
+            <div>Speed: <span id="speedValue">50</span> km/h</div>
+        </div>
+        <canvas id="jumpCanvas"></canvas>
+    </div>
+
+</main>
+
 <script src="app.js"></script>
 </body>
 </html>
