@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfa2dbef-d923-4528-9c39-3287baa64cc5" name="Changes" comment="mboh" />
+    <list default="true" id="cfa2dbef-d923-4528-9c39-3287baa64cc5" name="Changes" comment="mboh">
+      <change beforePath="$PROJECT_DIR$/../Tugas1/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
