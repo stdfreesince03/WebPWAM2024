@@ -42,7 +42,8 @@ async function loadPageToIndex(page) {
         scriptsContainer.appendChild(newScript);
     } catch (error) {
         console.error('Error loading page:', error);
-        mainContainer.innerHTML = '<h1>Error 404 !! - Page Not Found</h1>';
+        const response = await fetch('/pages/404.html');
+        mainContainer.innerHTML = await response.text();
     }
 }
 
