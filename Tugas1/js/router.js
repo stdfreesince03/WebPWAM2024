@@ -14,14 +14,15 @@ async function loadPageToIndex(page) {
 
     await clearScriptsContainer();
 
+
     let htmlUrl;
     if (page.startsWith('lab_')) {
-        htmlUrl = `./pages/${page}.html`;
+        htmlUrl = `/pages/${page}.html`;
     } else {
-        htmlUrl = `./pages/${page}.html`;
+        htmlUrl = `/pages/${page}.html`;
     }
 
-    let scriptUrl = `./js/${page}.js`;
+    let scriptUrl = `/js/${page}.js`;
 
     console.log('Fetching:', htmlUrl);
     console.log('Loading Script:', scriptUrl);
@@ -41,20 +42,8 @@ async function loadPageToIndex(page) {
         scriptsContainer.appendChild(newScript);
     } catch (error) {
         console.error('Error loading page:', error);
-        // Fetch 404 page
-        try {
-            const errorResponse = await fetch('./pages/404.html');
-            if (errorResponse.ok) {
-                mainContainer.innerHTML = await errorResponse.text();
-                console.log('404.html loaded.');
-            } else {
-                console.error('Error loading 404 page.');
-                mainContainer.innerHTML = '<h1>404 Error - Page Not Found</h1>';
-            }
-        } catch (fetchError) {
-            console.error('Error fetching 404 page:', fetchError);
-            mainContainer.innerHTML = '<h1>404 Error - Page Not Found</h1>';
-        }
+        const response = await fetch('/pages/404.html');
+        mainContainer.innerHTML = await response.text();
     }
 }
 
