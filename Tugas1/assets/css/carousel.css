@@ -1,4 +1,4 @@
-/* carousel.css */
+
 .carousel-embed {
     max-width: 1200px;
     width: 100%;
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     margin: 6rem auto 1.25rem;
-    padding: 0.5rem; /* Reduce padding to minimize height */
+    padding: 0.5rem;
     border-radius: 0.35rem;
     border: 0.2rem solid #bb99fe;
     background-color: #f7f7f8;
@@ -40,7 +40,6 @@
     100% { transform: translateX(-100%); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .carousel-slide {
         gap: 1rem;

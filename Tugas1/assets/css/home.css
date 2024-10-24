@@ -66,7 +66,7 @@
 
 .carousel-embed{
     background-color:#f7f7f8;;
-    padding: 4.5rem 8rem 2.5rem; /* Remove any default margin */
+    padding: 4.5rem 8rem 2.5rem;
 }
 
 .home-page .btn {
@@ -242,7 +242,7 @@
 }
 
 .benefits-header h2 {
-    font-size: 2rem; /* Smaller font size */
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     text-align: left;
 }
@@ -263,10 +263,9 @@
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     width:100%;
-    /*max-width: 1200px;*/
     margin: 0 auto;
 }
 
@@ -338,7 +337,7 @@
 
 @media (max-width: 768px) {
     .benefits-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .benefits-header {
@@ -356,7 +355,7 @@
 
 @media (max-width: 480px) {
     .benefits-grid {
-        grid-template-columns: 1fr; /* 1 column on small screens */
+        grid-template-columns: 1fr;
     }
 
     .benefits-header h2 {
@@ -368,8 +367,7 @@
     }
 }
 
-/* Courses Section Styling */
-/* Courses Section Styling */
+
 #courses {
     padding: 2rem 1.5vw;
     background-color: #f7f7f8;
@@ -397,16 +395,14 @@
 }
 
 .view-all-btn {
-    padding: 0.5rem 0.7rem; /* Smaller padding */
-    font-size: 0.85rem; /* Smaller font size */
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
     background-color: white;
     color:black;
-    border: none; /* Re
-    /*border-radius: 0.3rem;*/
+    border: none;
     margin-top:1.25rem;
-    margin-left: auto; /* Pushes button to the right */
+    margin-left: auto;
     cursor: pointer;
-    /*transition: background-color 0.3s, color 0.3s;*/
 }
 
 .view-all-btn:hover {
@@ -414,7 +410,6 @@
     border:0.0001rem solid #9f79e6;
 }
 
-/* Courses List Grid */
 .courses-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -431,7 +426,7 @@
 }
 
 .course-card:hover {
-    transform: translate(-5px, -5px); /* Move diagonally */
+    transform: translate(-5px, -5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -488,20 +483,19 @@
     background-color: #7d5fc9;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .courses-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .view-all-btn {
-        font-size: 0.75rem; /* Smaller font size for medium screens */
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .courses-list {
-        grid-template-columns: 1fr; /* 1 column for small screens */
+        grid-template-columns: 1fr;
     }
 
     .section-title {
@@ -514,6 +508,6 @@
 
     .view-all-btn {
         padding: 0.2rem 0.5rem;
-        font-size: 0.75rem; /* Smaller size for mobile */
+        font-size: 0.75rem;
     }
 }

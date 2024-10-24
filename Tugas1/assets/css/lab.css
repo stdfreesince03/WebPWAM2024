@@ -26,7 +26,7 @@ body {
 
 .lab-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -41,7 +41,7 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
-    height: 300px; /* Set a fixed height */
+    height: 300px;
 }
 
 .lab-card:hover {
@@ -51,7 +51,7 @@ body {
 
 .lab-image {
     width: 100%;
-    height: 150px; /* Adjusted for a smaller card size */
+    height: 150px;
     object-fit: cover;
 }
 
@@ -93,12 +93,12 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .lab-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .lab-grid {
-        grid-template-columns: 1fr; /* 1 column on small screens */
+        grid-template-columns: 1fr;
     }
 }
