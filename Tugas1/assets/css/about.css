@@ -13,7 +13,7 @@
 
 .about-header h1 {
     font-size: 2.5rem;
-    color: #9f79e6; /* Purple color */
+    color: #9f79e6;
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -57,7 +57,7 @@
     border: 1px solid #e5e5e5;
     border-radius: 0.5rem;
     padding: 1.5rem;
-    width: calc(50% - 2rem); /* For two columns */
+    width: calc(50% - 2rem);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@
     text-align: justify;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 1024px) {
     .achievement-card {
         width: calc(50% - 1rem);
@@ -120,7 +120,7 @@
 
 .goals h2 {
     font-size: 2rem;
-    color: #9f79e6; /* Purple color */
+    color: #9f79e6;
     margin-bottom: 1rem;
 }
 
@@ -135,9 +135,9 @@
 
 .goals-cards {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap into rows */
+    flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: space-between; /* Keeps cards evenly spaced */
+    justify-content: space-between;
 }
 
 .goal-card {
@@ -146,24 +146,24 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    flex: 1 1 calc(50% - 1rem); /* Each card takes up 50% minus the gap */
-    max-width: calc(50% - 1rem); /* Keeps two columns in the container */
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
     box-sizing: border-box;
-    text-align: left/* Ensures padding and border are included in width */
+    text-align: left
 }
 
-/* Responsive Adjustments for Tablet Size */
+
 @media (max-width: 1024px) {
     .goal-card {
-        flex: 1 1 100%; /* Full width for each card */
-        max-width: 100%; /* Single column on smaller screens */
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
-/* Adjusting the gap on smaller screens */
+
 @media (max-width: 768px) {
     .goals-cards {
-        gap: 1rem; /* Reduces gap between items */
+        gap: 1rem;
     }
 }
 
@@ -196,7 +196,7 @@
     background-color: #8b6fd1;
 }
 
-/* Responsive Styling */
+
 @media (max-width: 720px) {
     .goal-card {
         width: 100%;

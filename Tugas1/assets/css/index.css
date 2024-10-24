@@ -1,6 +1,7 @@
 
 .index * {
     box-sizing: border-box;
+    overflow-x:hidden;
 }
 
 body {
@@ -178,7 +179,7 @@ footer{
     min-height: 70vh;
 }
 
-/* Responsiveness */
+
 @media (max-width: 500px) {
     .index .sidebar {
         width: 50%;
@@ -337,7 +338,7 @@ footer{
 }
 
 .footer-column p, .footer-column a {
-    color: #666; /* Softer text color */
+    color: #666;
     font-size: 0.9rem;
     margin: 0.3rem 0;
     text-decoration: none;

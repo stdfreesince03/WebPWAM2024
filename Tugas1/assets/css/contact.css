@@ -1,4 +1,4 @@
-/* Contact Page Styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -19,7 +19,7 @@ body {
 
 .contact-header h1 {
     font-size: 2.5rem;
-    color: #9f79e6; /* Purple color */
+    color: #9f79e6;
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -129,7 +129,7 @@ textarea {
     text-decoration: underline;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     .contact-content {
         flex-direction: column;

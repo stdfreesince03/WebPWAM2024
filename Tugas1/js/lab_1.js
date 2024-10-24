@@ -64,10 +64,10 @@ let gameState = {
     position: { x: 0, y: 0 },
     velocity: { x: 0, y: 0 },
     isJumping: false,
-    phase: 'ready', // 'ready', 'approach', 'jump', 'landing', 'driving', 'finished'
+    phase: 'ready',
     lastTimestamp: 0,
     carSize: { width: 0, height: 0 },
-    initialSpeed: 0 // Store initial speed for consistent movement
+    initialSpeed: 0
 };
 
 

@@ -18,7 +18,7 @@ body {
 
 .pricing-header h1 {
     font-size: 2.5rem;
-    color: #9f79e6; /* Purple color */
+    color: #9f79e6;
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 .toggle-btn.active {
-    background-color: #9f79e6; /* Purple color */
+    background-color: #9f79e6;
     color: #fff;
 }
 
@@ -71,7 +71,7 @@ body {
 .plan-header {
     font-size: 1.5rem;
     color: #333;
-    background-color: #ece1ff; /* Light purple */
+    background-color: #ece1ff;
     padding: 0.5rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -101,7 +101,7 @@ body {
 }
 
 .get-started {
-    background-color: #9f79e6; /* Purple color */
+    background-color: #9f79e6;
     color: #fff;
     padding: 0.7rem 1.5rem;
     border: none;
@@ -113,10 +113,9 @@ body {
 }
 
 .get-started:hover {
-    background-color: #8b6fd1; /* Darker purple */
+    background-color: #8b6fd1;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .pricing-cards {
         flex-direction: column;
@@ -223,7 +222,7 @@ body {
 
 .faq-header h2 {
     font-size: 2rem;
-    color: #9f79e6; /* Purple color */
+    color: #9f79e6;
     margin-bottom: 0.5rem;
 }
 
@@ -311,7 +310,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .faq-header {
         text-align: center;

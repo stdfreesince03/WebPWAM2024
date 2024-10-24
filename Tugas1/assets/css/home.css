@@ -517,6 +517,7 @@
     text-align: center;
     background-color: #f7f7f8;
     margin:auto;
+    width:100%;
 }
 
 .pricing-header h2 {
@@ -611,34 +612,43 @@
 }
 
 
+/* FAQ Section Styling */
 section.faq-section {
     padding: 3rem 1.5vw;
-    background-color: #f5f2fc; /* Light purple background */
+    background-color: #f7f7f8;
     margin: auto;
+    width:80%;
 }
 
 .faq-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2rem;
 }
 
 .faq-header h2 {
     font-size: 2rem;
-    color: #663399; /* Darker purple */
+    color: #9f79e6;
     margin-bottom: 0.5rem;
 }
 
 .faq-header p {
     font-size: 1rem;
-    color: #776d7e; /* Muted purple for text */
+    color: #666;
     margin-bottom: 1rem;
 }
 
-.faq-list .faq-item {
-    margin-bottom: 1rem;
-    border: 1px solid #d3cce6; /* Light border color */
-    border-radius: 0.3rem;
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .faq-question {
@@ -646,26 +656,39 @@ section.faq-section {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #eae4f8; /* Lighter purple for question */
-    cursor: pointer;
+    background-color: #f3f0f8;
     font-weight: bold;
-    color: #4e3e79; /* Dark purple for text */
+    color: #333;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background-color: #eae4f8;
 }
 
 .faq-answer {
     display: none;
     padding: 1rem;
     background-color: #fff;
-    border-top: 1px solid #d3cce6;
+    border-top: 1px solid #e0e0e0;
     animation: fadeIn 0.3s;
 }
 
 .toggle-icon {
     font-size: 1.2rem;
-    color: #9f79e6; /* Light purple */
+    color: #9f79e6;
+    transition: transform 0.3s;
 }
 
-/* Animation for smooth toggling */
+.faq-item.open .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
