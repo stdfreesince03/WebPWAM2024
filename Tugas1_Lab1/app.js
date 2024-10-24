@@ -43,198 +43,260 @@ const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 const startButton = document.getElementById('startButton');
 
+// Create modal elements
+const modal = document.createElement('div');
+modal.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+    text-align: center;
+`;
+
+const modalOverlay = document.createElement('div');
+modalOverlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+`;
+
+const modalContent = document.createElement('div');
+modalContent.innerHTML = `
+    <h2 style="margin-bottom: 20px; color: #333;">Game Over</h2>
+    <p id="modalMessage" style="margin-bottom: 20px; font-size: 16px;"></p>
+    <button id="restartButton" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+        Restart Game
+    </button>
+`;
+
+modal.appendChild(modalContent);
+document.body.appendChild(modalOverlay);
+document.body.appendChild(modal);
+
 // Car options with images and masses
 const cars = [
-    { name: 'Car 1', mass: 1000, image: 'car_1.png' },
-    { name: 'Car 2', mass: 1200, image: 'car_2.png' },
-    { name: 'Car 3', mass: 1400, image: 'car_3.png' },
-    { name: 'Car 4', mass: 1600, image: 'car_4.png' },
-    { name: 'Car 5', mass: 1800, image: 'car_5.png' },
-    { name: 'Car 6', mass: 2000, image: 'car_6.png' }
+    { name: 'Car 1', mass: 1000, image: 'car_1.png', jumpForce: 12 },
+    { name: 'Car 2', mass: 1200, image: 'car_2.png', jumpForce: 11 },
+    { name: 'Car 3', mass: 1400, image: 'car_3.png', jumpForce: 10 },
+    { name: 'Car 4', mass: 1600, image: 'car_4.png', jumpForce: 9 },
+    { name: 'Car 5', mass: 1800, image: 'car_5.png', jumpForce: 8 },
+    { name: 'Car 6', mass: 2000, image: 'car_6.png', jumpForce: 7 }
 ];
 
-let speed = parseFloat(speedSlider.value) * 1000 / 3600;
-let selectedCar = cars[0];
-let carX = 0, carY = canvas.height - 50;
-let isJumping = false;
+// Physics constants
+const GRAVITY = 9.81;
+const TIME_STEP = 1/60;
+const FRICTION = 0.98;
+const RESTITUTION = 0.5;
+
+// Game state
+let gameState = {
+    speed: 0,
+    selectedCar: cars[0],
+    position: { x: 0, y: 0 },
+    velocity: { x: 0, y: 0 },
+    isJumping: false,
+    phase: 'ready', // 'ready', 'approach', 'jump', 'landing', 'driving', 'finished'
+    lastTimestamp: 0,
+    carSize: { width: 0, height: 0 },
+    initialSpeed: 0 // Store initial speed for consistent movement
+};
+
+// Car image handling
 let carImg = new Image();
-let phase = 1; // 1 for straight, 2 for projectile, 3 for landing, 4 for bouncing off
-let initialVelocityX = 0, initialVelocityY = 0;
-const gravity = 9.8;
-const timeStep = 0.02;
-const landingBuffer = 10; // Tolerance for landing on the second ledge
 
-// Set initial car selection to Car 1
-carSelect.value = 1;
-selectedCar = cars[0];
-speedSlider.disabled = false; // Ensure slider is enabled initially
-preloadCarImage();
-
-// Preload the car image
 function preloadCarImage() {
-    carImg.src = `./images/${selectedCar.image}`;
+    carImg.src = `./images/${gameState.selectedCar.image}`;
     carImg.onload = () => {
+        gameState.carSize = {
+            width: canvas.width * 0.05,
+            height: canvas.height * 0.05
+        };
+        positionCarOnLedge();
         drawScene();
     };
 }
 
-// Function to draw the grassy ledges
+// Drawing functions
 function drawGrassyLedge() {
     ctx.fillStyle = '#228B22';
     ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
     ctx.fillRect(ledgeX2, ledgeY2, ledgeWidth2, ledgeHeight2);
 }
 
-// Function to draw the car at a specific position
 function drawCar(x, y) {
-    const carWidth = canvas.width * 0.05;
-    const carHeight = canvas.height * 0.05;
-    ctx.drawImage(carImg, x, y, carWidth, carHeight);
+    ctx.drawImage(carImg, x, y, gameState.carSize.width, gameState.carSize.height);
 }
 
-// Function to update car selection
-function updateCarSelection() {
-    selectedCar = cars[parseInt(carSelect.value) - 1];
-    carName.textContent = selectedCar.name;
-    carImage.src = `./images/${selectedCar.image}`;
-    preloadCarImage();
+function drawScene() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrassyLedge();
+
+    // Only draw car if it's within canvas bounds
+    if (gameState.position.x < canvas.width) {
+        drawCar(gameState.position.x, gameState.position.y);
+    } else if (gameState.phase !== 'finished') {
+        // Car has left the canvas
+        showGameOverModal('Success! Car made it through! Play again?');
+    }
+}
+
+// Physics and game logic
+function updatePhysics(deltaTime) {
+    switch(gameState.phase) {
+        case 'approach':
+            gameState.position.x += gameState.speed * deltaTime;
+            if (gameState.position.x >= ledgeWidth1 - gameState.carSize.width) {
+                gameState.phase = 'jump';
+                initiateJump();
+            }
+            break;
+
+        case 'jump':
+            gameState.position.x += gameState.velocity.x * deltaTime;
+            gameState.position.y += gameState.velocity.y * deltaTime;
+            gameState.velocity.y += GRAVITY * deltaTime;
+            checkCollisions();
+            break;
+
+        case 'landing':
+        case 'driving':
+            // Use the initial speed for consistent movement
+            gameState.position.x += gameState.initialSpeed * deltaTime;
+            break;
+    }
+}
+
+function checkCollisions() {
+    const carBottom = gameState.position.y + gameState.carSize.height;
+    const carRight = gameState.position.x + gameState.carSize.width;
+
+    // Check for landing on second ledge
+    if (gameState.position.x >= ledgeX2 &&
+        carRight <= ledgeX2 + ledgeWidth2 &&
+        carBottom >= ledgeY2 &&
+        gameState.velocity.y > 0) {
+
+        gameState.position.y = ledgeY2 - gameState.carSize.height;
+        gameState.velocity.y = 0;
+        gameState.velocity.x = gameState.initialSpeed; // Maintain initial speed
+        gameState.phase = 'driving';
+    }
+
+    // Check for side collision with second ledge
+    if (carRight >= ledgeX2 &&
+        gameState.position.x < ledgeX2 &&
+        carBottom > ledgeY2) {
+
+        gameState.position.x = ledgeX2 - gameState.carSize.width;
+        gameState.velocity.x *= -RESTITUTION;
+        gameState.velocity.y *= RESTITUTION;
+    }
+
+    // Check for falling off
+    if (carBottom > canvas.height) {
+        showGameOverModal('Car crashed! Try again?');
+    }
+}
+
+function initiateJump() {
+    const jumpAngle = Math.PI / 4; // 45 degrees
+    const jumpSpeed = gameState.selectedCar.jumpForce;
+
+    gameState.velocity.x = gameState.speed;
+    gameState.velocity.y = -jumpSpeed * Math.sin(jumpAngle);
+}
+
+// Modal handling
+function showGameOverModal(message) {
+    gameState.phase = 'finished';
+    gameState.isJumping = false;
+    document.getElementById('modalMessage').textContent = message;
+    modal.style.display = 'block';
+    modalOverlay.style.display = 'block';
+}
+
+function hideGameOverModal() {
+    modal.style.display = 'none';
+    modalOverlay.style.display = 'none';
+}
+
+function restartGame() {
+    hideGameOverModal();
+    speedSlider.disabled = false;
+    carSelect.disabled = false;
     positionCarOnLedge();
+    gameState.phase = 'ready';
 }
 
-// Function to update speed
+// Game control functions
+function startJump() {
+    if (gameState.isJumping) return;
+
+    gameState.isJumping = true;
+    gameState.phase = 'approach';
+    gameState.initialSpeed = parseFloat(speedSlider.value) * (1000 / 3600); // Convert km/h to m/s
+    gameState.speed = gameState.initialSpeed;
+    gameState.lastTimestamp = performance.now();
+
+    speedSlider.disabled = true;
+    carSelect.disabled = true;
+
+    requestAnimationFrame(gameLoop);
+}
+
+function gameLoop(timestamp) {
+    if (!gameState.isJumping) return;
+
+    const deltaTime = (timestamp - gameState.lastTimestamp) / 1000;
+    gameState.lastTimestamp = timestamp;
+
+    updatePhysics(deltaTime);
+    drawScene();
+
+    if (gameState.phase !== 'finished') {
+        requestAnimationFrame(gameLoop);
+    }
+}
+
+// Setup functions
+function updateCarSelection() {
+    gameState.selectedCar = cars[parseInt(carSelect.value) - 1];
+    carName.textContent = gameState.selectedCar.name;
+    carImage.src = `./images/${gameState.selectedCar.image}`;
+    preloadCarImage();
+}
+
 function updateSpeed() {
-    if (!isJumping) { // Only allow speed changes if not jumping
-        speed = parseFloat(speedSlider.value) * 1000 / 3600;
+    if (!gameState.isJumping) {
         speedValue.textContent = speedSlider.value;
     }
 }
 
-// Function to position the car on the first ledge
 function positionCarOnLedge() {
-    carX = ledgeX1 + (ledgeWidth1 * 0.2);
-    carY = ledgeY1 - (canvas.height * 0.04);
+    gameState.position = {
+        x: ledgeX1 + (ledgeWidth1 * 0.2),
+        y: ledgeY1 - gameState.carSize.height
+    };
+    gameState.velocity = { x: 0, y: 0 };
+    gameState.phase = 'ready';
     drawScene();
 }
 
-// Function to draw the entire scene
-function drawScene() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawGrassyLedge();
-    drawCar(carX, carY);
-}
-
-// Start the jump
-function startJump() {
-    if (isJumping) return; // Prevent multiple starts
-    carX = ledgeX1 + (ledgeWidth1 * 0.2);
-    carY = ledgeY1 - (canvas.height * 0.04);
-    phase = 1; // Start with straight motion on the first ledge
-    isJumping = true;
-    initialVelocityX = speed;
-    initialVelocityY = -12; // Adjusted upward velocity for smoother arc
-    speedSlider.disabled = true; // Disable speed slider
-    carSelect.disabled = true; // Disable car selection
-    animateJump();
-}
-
-// Animation loop for car jump
-function animateJump() {
-    if (!isJumping) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawGrassyLedge();
-
-    const carBottom = carY + canvas.height * 0.05;
-
-    // Phase 1: Move straight along the first ledge
-    if (phase === 1) {
-        carX += 2; // Move straight at constant speed
-        if (carX >= ledgeWidth1 - (canvas.width * 0.05)) {
-            phase = 2;
-            initialVelocityY = -15; // Higher initial upward velocity for arc
-        }
-    }
-
-    // Phase 2: Apply projectile motion
-    if (phase === 2) {
-        carX += initialVelocityX * timeStep;
-        carY -= (initialVelocityY * timeStep - 0.5 * gravity * timeStep);
-        initialVelocityY -= gravity * timeStep;
-
-        // Check for landing on the second ledge
-        if (
-            carX >= ledgeX2 &&
-            carX <= ledgeX2 + ledgeWidth2 &&
-            carBottom >= ledgeY2 - landingBuffer &&
-            initialVelocityY <= 0 // Ensure downward motion for landing
-        ) {
-            carY = ledgeY2 - (canvas.height * 0.04); // Align to second ledge
-            phase = 3; // Switch to straight motion on second ledge
-        }
-
-        // Check for collision with the left side of the second ledge
-        if (
-            carX >= ledgeX2 - (canvas.width * 0.05) &&
-            carX < ledgeX2 &&
-            carBottom >= ledgeY2
-        ) {
-            phase = 4; // Switch to bouncing off phase
-            initialVelocityX = -initialVelocityX * 0.5; // Reverse and reduce horizontal speed
-            initialVelocityY *= 0.6; // Reduce vertical speed
-        }
-
-        // Stop if the car falls below the canvas
-        if (carY >= canvas.height) {
-            endGame('Car fell off!');
-            return;
-        }
-
-        // Stop if the car hits the right edge
-        if (carX >= canvas.width) {
-            endGame('Car hit the right wall!');
-            return;
-        }
-    }
-
-    // Phase 3: Move straight along the second ledge
-    if (phase === 3) {
-        carX += 2;
-
-        // Stop the animation if the car reaches the end of the second ledge
-        if (carX >= ledgeX2 + ledgeWidth2 - (canvas.width * 0.05)) {
-            endGame('Car reached the end of the second ledge!');
-            return;
-        }
-    }
-
-    // Phase 4: Bounce off the side of the second ledge
-    if (phase === 4) {
-        carX += initialVelocityX * timeStep;
-        carY -= initialVelocityY * timeStep;
-        initialVelocityY -= gravity * timeStep;
-
-        // Stop bouncing if the car falls below the canvas
-        if (carY >= canvas.height) {
-            endGame('Car fell off!');
-            return;
-        }
-    }
-
-    // Draw the car
-    drawCar(carX, carY);
-    requestAnimationFrame(animateJump);
-}
-
-// End game function
-function endGame(message) {
-    isJumping = false;
-    alert(message);
-    speedSlider.disabled = false;
-    carSelect.disabled = false;
-}
-
-// Event listeners and initial setup
-drawScene();
+// Event listeners and initialization
 carSelect.addEventListener('input', updateCarSelection);
 speedSlider.addEventListener('input', updateSpeed);
 startButton.addEventListener('click', startJump);
+document.getElementById('restartButton').addEventListener('click', restartGame);
+preloadCarImage();
