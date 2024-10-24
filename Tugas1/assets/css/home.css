@@ -16,6 +16,7 @@
     left:-3.75rem;
 }
 
+
 .home-page .slogan {
     margin-bottom: 1.5rem;
 }
@@ -31,6 +32,7 @@
     height:auto;
     align-self: center;
     padding-left: 2rem;
+    min-width: 200px;
 }
 
 .home-page h1 {
@@ -124,6 +126,11 @@
 
 }
 
+.dyn-contain{
+    display: flex;
+    flex-direction: column;
+}
+
 .lightning-icon {
     width: 2.5rem;
     margin-right: 0.5rem;
@@ -136,8 +143,7 @@
 
 @media (max-width: 463px) {
     #stock-home-img{
-        width:100%;
-        left:-0.3rem;
+        width:80vw;
     }
 }
 @media(max-width:613px){
