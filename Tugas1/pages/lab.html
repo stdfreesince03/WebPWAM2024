@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Virtual Labs</title>
-    <link rel="stylesheet" href='../assets/css/lab.css'>
+    <link rel="stylesheet" href="../assets/css/lab.css">
+    <script src="../js/router.js" defer></script> <!-- Use defer to load after DOM -->
 </head>
 <body>
 <div class="lab-page">
@@ -16,29 +17,12 @@
 
     <main class="lab-grid">
         <div class="lab-card">
-            <img src="../assets/images/lab-1.jpg" alt="Lab 1" class="lab-image">
+            <img src="../assets/images/lab1.png" alt="Lab 1" class="lab-image">
             <div class="lab-info">
-                <h2>HTML & CSS Lab</h2>
-                <p>Learn the basics of HTML and CSS through practical exercises.</p>
-                <a href="../assets/lab_1.html" class="btn visit-lab">Start Lab</a>
-            </div>
-        </div>
-
-        <div class="lab-card">
-            <img src="../assets/images/lab-2.jpg" alt="Lab 2" class="lab-image">
-            <div class="lab-info">
-                <h2>JavaScript Lab</h2>
-                <p>Experiment with JavaScript concepts through interactive coding challenges.</p>
-                <a href="../assets/lab_2.html" class="btn visit-lab">Start Lab</a>
-            </div>
-        </div>
-
-        <div class="lab-card">
-            <img src="../assets/images/lab-3.jpg" alt="Lab 3" class="lab-image">
-            <div class="lab-info">
-                <h2>React Lab</h2>
-                <p>Build your first React components and learn core concepts of React.</p>
-                <a href="../assets/lab_3.html" class="btn visit-lab">Start Lab</a>
+                <h2>Car Jump</h2>
+                <p>Jump!!!</p>
+                <!-- Use goToPage() instead -->
+                <a href="#" onclick="goToPage('lab_1'); return false;" class="btn visit-lab">Start Lab</a>
             </div>
         </div>
     </main>

@@ -1,4 +1,3 @@
-
 async function clearScriptsContainer() {
     const scriptsContainer = document.querySelector('.added-scripts');
     if (scriptsContainer) {
@@ -15,8 +14,18 @@ async function loadPageToIndex(page) {
 
     await clearScriptsContainer();
 
-    const htmlUrl = `./pages/${page}.html`;
-    let scriptUrl = `./js/${page}.js`;
+    // Adjust URL for fetching the HTML
+    let htmlUrl;
+    if (page.startsWith('lab_')) {
+        htmlUrl = `/pages/${page}.html`; // Use absolute path
+    } else {
+        htmlUrl = `/pages/${page}.html`;
+    }
+
+    let scriptUrl = `/js/${page}.js`; // Use absolute path
+
+    console.log('Fetching:', htmlUrl);
+    console.log('Loading Script:', scriptUrl);
 
     try {
         const response = await fetch(htmlUrl);
@@ -25,19 +34,12 @@ async function loadPageToIndex(page) {
         mainContainer.innerHTML = await response.text();
         console.log(`${page}.html loaded.`);
 
-        scriptUrl += `?t=${new Date().getTime()}`;
-
         const newScript = document.createElement('script');
-        newScript.src = scriptUrl;
+        newScript.src = `${scriptUrl}?t=${new Date().getTime()}`;
         newScript.type = 'module';
         newScript.async = false;
 
-        newScript.addEventListener('load', () => {
-            console.log(`Script ${scriptUrl} loaded.`);
-        });
-
         scriptsContainer.appendChild(newScript);
-
     } catch (error) {
         console.error('Error loading page:', error);
         mainContainer.innerHTML = '<h1>Error 404 !! - Page Not Found</h1>';
@@ -45,10 +47,22 @@ async function loadPageToIndex(page) {
 }
 
 export async function handleRouteChange(page) {
-    window.history.pushState({}, page, window.location.origin + `/${page}`);
+    console.log('Handling route:', page);
+
+    if (page.startsWith('lab_')) {
+        window.history.pushState({}, page, `${window.location.origin}/lab/${page}`);
+    } else {
+        window.history.pushState({}, page, `${window.location.origin}/${page}`);
+    }
+
     await loadPageToIndex(page);
 }
 
+// Global function for HTML onclick usage
+window.goToPage = async function(page) {
+    console.log(`Navigating to page: ${page}`);
+    await handleRouteChange(page);
+};
 
 export async function setupNavigation() {
     const links = document.querySelectorAll('.nav-link, .sidebar a[data-page]');
@@ -67,10 +81,10 @@ export async function setupNavigation() {
     });
 
     window.addEventListener('popstate', async () => {
-        const path = window.location.pathname.replace('/', '') || 'home';
+        const path = window.location.pathname.replace('/lab/', '').replace('/', '') || 'home';
         await loadPageToIndex(path);
     });
 
-    const initialPage = window.location.pathname.replace('/', '') || 'home';
+    const initialPage = window.location.pathname.replace('/lab/', '').replace('/', '') || 'home';
     await loadPageToIndex(initialPage);
 }
