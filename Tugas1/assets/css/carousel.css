@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 6rem auto 2rem;
+    margin: 6rem auto 1.25rem;
     padding: 0.5rem; /* Reduce padding to minimize height */
     border-radius: 0.35rem;
     border: 0.2rem solid #bb99fe;
