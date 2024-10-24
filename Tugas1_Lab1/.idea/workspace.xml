@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa2dbef-d923-4528-9c39-3287baa64cc5" name="Changes" comment="mboh">
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseFrontEnd_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseFrontEnd_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseFrontEnd_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseGraphic_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseGraphic_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseGraphic_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseMobile_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseMobile_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseMobile_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseUI_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseUI_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseUI_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseWeb_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/CourseWeb_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/images/courseWeb_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/contact.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/course.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/course.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/pricing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tugas1/js/lab_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/js/lab_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tugas1/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tugas1/pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tugas1/pages/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/courses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tugas1/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tugas1/pages/lab.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/lab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tugas1/pages/lab_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/lab_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tugas1/pages/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/pricing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
