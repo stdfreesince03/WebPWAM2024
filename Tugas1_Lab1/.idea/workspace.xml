@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa2dbef-d923-4528-9c39-3287baa64cc5" name="Changes" comment="mboh">
-      <change beforePath="$PROJECT_DIR$/../Tugas1/pages/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/pages/courses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/css/about.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tugas1/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
