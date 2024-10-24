@@ -90,7 +90,7 @@ body {
     background-color: #7d5fc9;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
     .lab-grid {
         grid-template-columns: repeat(2, 1fr);

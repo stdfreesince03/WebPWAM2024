@@ -17,12 +17,12 @@ async function loadPageToIndex(page) {
 
     let htmlUrl;
     if (page.startsWith('lab_')) {
-        htmlUrl = `/pages/${page}.html`; // Use absolute path
+        htmlUrl = `/pages/${page}.html`;
     } else {
         htmlUrl = `/pages/${page}.html`;
     }
 
-    let scriptUrl = `/js/${page}.js`; // Use absolute path
+    let scriptUrl = `/js/${page}.js`;
 
     console.log('Fetching:', htmlUrl);
     console.log('Loading Script:', scriptUrl);

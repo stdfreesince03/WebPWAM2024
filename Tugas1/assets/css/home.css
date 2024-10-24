@@ -237,7 +237,6 @@
 
 .benefits-header {
     text-align: left;
-    /*max-width: 1200px;*/
     margin-bottom: 2rem;
 }
 
@@ -250,7 +249,6 @@
 .benefits-header p {
     font-size: 1rem;
     color: #666;
-    /*max-width: 600px;*/
     margin: 0.5rem 0;
     line-height: 1.5;
     text-align: left;
@@ -324,7 +322,7 @@
     transform: scale(1.2);
 }
 
-/* Responsive Styles */
+
 @media (max-width: 1024px) {
     .benefits-header h2 {
         font-size: 1.85rem;
@@ -509,5 +507,217 @@
     .view-all-btn {
         padding: 0.2rem 0.5rem;
         font-size: 0.75rem;
+    }
+}
+
+
+
+.pricing-section {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background-color: #f7f7f8;
+    margin:auto;
+}
+
+.pricing-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color, #333);
+}
+
+.pricing-header p {
+    margin-bottom: 2rem;
+    color: var(--text-color, #666);
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: var(--btn-bg, #9f79e6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn.active {
+    background-color: var(--btn-active-bg, #9f79e6);
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 300px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #f3f0f8;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--heading-color, #333);
+}
+
+.card-price {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #b08be9;
+}
+
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.9rem;
+}
+
+.btn.primary-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #b08be9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.primary-btn:hover {
+    background-color: #a27fe8;
+}
+
+.footer {
+    background-color: #e8e2f7;
+    padding: 2.5rem 1.5vw;
+    color: #444;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 1rem 1.5rem;
+}
+
+.footer-column h4 {
+    color: #9f79e6;
+    margin-bottom: 1rem;
+}
+
+.footer-column p, .footer-column a {
+    color: #666; /* Softer text color */
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: #9f79e6;
+}
+
+.footer-bottom {
+    width:100vw;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+section.faq-section {
+    padding: 3rem 1.5vw;
+    background-color: #f5f2fc; /* Light purple background */
+    margin: auto;
+}
+
+.faq-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.faq-header h2 {
+    font-size: 2rem;
+    color: #663399; /* Darker purple */
+    margin-bottom: 0.5rem;
+}
+
+.faq-header p {
+    font-size: 1rem;
+    color: #776d7e; /* Muted purple for text */
+    margin-bottom: 1rem;
+}
+
+.faq-list .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #d3cce6; /* Light border color */
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #eae4f8; /* Lighter purple for question */
+    cursor: pointer;
+    font-weight: bold;
+    color: #4e3e79; /* Dark purple for text */
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #d3cce6;
+    animation: fadeIn 0.3s;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #9f79e6; /* Light purple */
+}
+
+/* Animation for smooth toggling */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

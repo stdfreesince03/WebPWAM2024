@@ -129,7 +129,7 @@ function updatePhysics(deltaTime) {
 
         case 'landing':
         case 'driving':
-            // Use the initial speed for consistent movement
+
             gameState.position.x += gameState.initialSpeed * deltaTime;
             break;
     }
@@ -146,7 +146,7 @@ function checkCollisions() {
 
         gameState.position.y = ledgeY2 - gameState.carSize.height;
         gameState.velocity.y = 0;
-        gameState.velocity.x = gameState.initialSpeed; // Maintain initial speed
+        gameState.velocity.x = gameState.initialSpeed;
         gameState.phase = 'driving';
     }
 
@@ -191,7 +191,7 @@ function startJump() {
 
     gameState.isJumping = true;
     gameState.phase = 'approach';
-    gameState.initialSpeed = parseFloat(speedSlider.value) * (1000 / 3600); // Convert km/h to m/s
+    gameState.initialSpeed = parseFloat(speedSlider.value) * (1000 / 3600);
     gameState.speed = gameState.initialSpeed;
     gameState.lastTimestamp = performance.now();
 
@@ -239,7 +239,7 @@ function positionCarOnLedge() {
     drawScene();
 }
 
-// Event listeners and initialization
+
 carSelect.addEventListener('input', updateCarSelection);
 speedSlider.addEventListener('input', updateSpeed);
 startButton.addEventListener('click', startJump);
