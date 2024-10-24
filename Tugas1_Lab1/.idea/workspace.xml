@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa2dbef-d923-4528-9c39-3287baa64cc5" name="Changes" comment="mboh">
-      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/css/about.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tugas1/pages/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tugas1/assets/css/pricing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tugas1/js/pricing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tugas1/pages/pricing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tugas1/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Tugas1/assets/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
