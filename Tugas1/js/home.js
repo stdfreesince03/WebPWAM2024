@@ -1,6 +1,5 @@
 import { loadCarousel } from '../components/carousel.js';
 
-console.log('Home page script loaded and executed.');
 
 
 (async function initHome() {

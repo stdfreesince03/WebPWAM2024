@@ -1,8 +1,7 @@
-// Get canvas and context
+
 const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
 
-// Set up the canvas for higher DPI
 function setHighDPI(canvas, context, scaleFactor = 2) {
     const originalWidth = canvas.width;
     const originalHeight = canvas.height;
@@ -16,11 +15,10 @@ function setHighDPI(canvas, context, scaleFactor = 2) {
     recalculateLedgePositions();
 }
 
-// Variables for ledges
+
 let ledgeWidth1, ledgeX1, ledgeHeight1, ledgeY1;
 let ledgeWidth2, ledgeX2, ledgeHeight2, ledgeY2;
 
-// Recalculate ledge positions after scaling
 function recalculateLedgePositions() {
     ledgeWidth1 = canvas.width * 0.35 / 2;
     ledgeX1 = 0;
@@ -33,10 +31,10 @@ function recalculateLedgePositions() {
     ledgeY2 = canvas.height / 2 - ledgeHeight2;
 }
 
-// Initialize the canvas with higher DPI
+
 setHighDPI(canvas, ctx);
 
-// Get controls
+
 const carSelect = document.getElementById('carSelect');
 const speedSlider = document.getElementById('speed');
 const speedValue = document.getElementById('speedValue');
@@ -44,7 +42,6 @@ const carName = document.getElementById('carName');
 const carImage = document.getElementById('carImage');
 const startButton = document.getElementById('startButton');
 
-// Car options with images and masses
 const cars = [
     { name: 'Car 1', mass: 1000, image: 'car_1.png', jumpForce: 12 },
     { name: 'Car 2', mass: 1200, image: 'car_2.png', jumpForce: 11 },
@@ -54,13 +51,13 @@ const cars = [
     { name: 'Car 6', mass: 2000, image: 'car_6.png', jumpForce: 7 }
 ];
 
-// Physics constants
+
 const GRAVITY = 9.81;
 const TIME_STEP = 1 / 60;
 const FRICTION = 0.98;
 const RESTITUTION = 0.5;
 
-// Game state
+
 let gameState = {
     speed: 0,
     selectedCar: cars[0],
@@ -73,7 +70,7 @@ let gameState = {
     initialSpeed: 0 // Store initial speed for consistent movement
 };
 
-// Car image handling
+
 let carImg = new Image();
 
 function preloadCarImage() {
@@ -88,7 +85,7 @@ function preloadCarImage() {
     };
 }
 
-// Drawing functions
+
 function drawGrassyLedge() {
     ctx.fillStyle = '#228B22';
     ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
@@ -103,16 +100,16 @@ function drawScene() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawGrassyLedge();
 
-    // Only draw car if it's within canvas bounds
+
     if (gameState.position.x < canvas.width) {
         drawCar(gameState.position.x, gameState.position.y);
     } else {
-        // Car has left the canvas
+
         endGame('success');
     }
 }
 
-// Physics and game logic
+
 function updatePhysics(deltaTime) {
     switch (gameState.phase) {
         case 'approach':
@@ -142,7 +139,6 @@ function checkCollisions() {
     const carBottom = gameState.position.y + gameState.carSize.height;
     const carRight = gameState.position.x + gameState.carSize.width;
 
-    // Check for landing on second ledge
     if (gameState.position.x >= ledgeX2 &&
         carRight <= ledgeX2 + ledgeWidth2 &&
         carBottom >= ledgeY2 &&
@@ -154,7 +150,7 @@ function checkCollisions() {
         gameState.phase = 'driving';
     }
 
-    // Check for falling off
+
     if (carBottom > canvas.height) {
         endGame('crash');
     }
@@ -168,7 +164,7 @@ function initiateJump() {
     gameState.velocity.y = -jumpSpeed * Math.sin(jumpAngle);
 }
 
-// End the game and restart automatically
+
 function endGame(status) {
     gameState.phase = 'finished';
     gameState.isJumping = false;
@@ -189,7 +185,7 @@ function restartGame() {
     gameState.phase = 'ready';
 }
 
-// Game control functions
+
 function startJump() {
     if (gameState.isJumping) return;
 
@@ -219,7 +215,7 @@ function gameLoop(timestamp) {
     }
 }
 
-// Setup functions
+
 function updateCarSelection() {
     gameState.selectedCar = cars[parseInt(carSelect.value) - 1];
     carName.textContent = gameState.selectedCar.name;

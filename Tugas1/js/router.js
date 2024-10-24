@@ -14,7 +14,7 @@ async function loadPageToIndex(page) {
 
     await clearScriptsContainer();
 
-    // Adjust URL for fetching the HTML
+
     let htmlUrl;
     if (page.startsWith('lab_')) {
         htmlUrl = `/pages/${page}.html`; // Use absolute path
@@ -58,7 +58,6 @@ export async function handleRouteChange(page) {
     await loadPageToIndex(page);
 }
 
-// Global function for HTML onclick usage
 window.goToPage = async function(page) {
     console.log(`Navigating to page: ${page}`);
     await handleRouteChange(page);
