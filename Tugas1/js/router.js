@@ -12,6 +12,9 @@ async function clearScriptsAndStylesContainer() {
     });
     console.log('Dynamic styles cleared');
 
+    const mainContainer = document.querySelector('main');
+    mainContainer.innerHTML = '';
+
 }
 
 async function loadPageToIndex(page) {
