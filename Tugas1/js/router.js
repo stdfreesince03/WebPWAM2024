@@ -36,16 +36,19 @@ async function loadPageToIndex(page) {
 
     try {
         // Load the CSS
-            await new Promise((resolve, reject) => {
-                const newStyling = document.createElement('link');
-                newStyling.rel = 'stylesheet';
-                newStyling.href = `${styleUrl}?t=${new Date().getTime()}`;
-                newStyling.setAttribute('data-page', page);
-                newStyling.onload = resolve;
-                newStyling.onerror = reject;
-                document.head.appendChild(newStyling);
-                console.log(`${page}.css loaded.`);
-            });
+            if(page !=='pricing'){
+                await new Promise((resolve, reject) => {
+                    const newStyling = document.createElement('link');
+                    newStyling.rel = 'stylesheet';
+                    newStyling.href = `${styleUrl}?t=${new Date().getTime()}`;
+                    newStyling.setAttribute('data-page', page);
+                    newStyling.onload = resolve;
+                    newStyling.onerror = reject;
+                    document.head.appendChild(newStyling);
+                    console.log(`${page}.css loaded.`);
+                });
+            }
+
 
         // Load the HTML after the CSS is done
         const htmlResponse = await fetch(htmlUrl);
