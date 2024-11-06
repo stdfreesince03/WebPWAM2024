@@ -36,7 +36,6 @@ async function loadPageToIndex(page) {
 
     try {
         // Load the CSS
-        if(page !== 'pricing'){
             await new Promise((resolve, reject) => {
                 const newStyling = document.createElement('link');
                 newStyling.rel = 'stylesheet';
@@ -47,7 +46,6 @@ async function loadPageToIndex(page) {
                 document.head.appendChild(newStyling);
                 console.log(`${page}.css loaded.`);
             });
-        }
 
         // Load the HTML after the CSS is done
         const htmlResponse = await fetch(htmlUrl);
