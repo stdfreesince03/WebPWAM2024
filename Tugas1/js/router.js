@@ -1,4 +1,4 @@
-async function clearScriptsContainer() {
+async function clearScriptsAndStylesContainer() {
     const scriptsContainer = document.querySelector('.added-scripts');
     if (scriptsContainer) {
         while (scriptsContainer.firstChild) {
@@ -6,14 +6,21 @@ async function clearScriptsContainer() {
         }
         console.log('.added-scripts container cleared');
     }
+    const styleContainer = document.querySelector('head');
+    const dynamicStyles = styleContainer.querySelectorAll('link[rel="stylesheet"]:not([href="./assets/css/index.css"])');
+    dynamicStyles.forEach(style => {
+        style.remove();
+    });
+    console.log('Dynamic styles cleared');
+
 }
 
 async function loadPageToIndex(page) {
     const mainContainer = document.querySelector('main');
     const scriptsContainer = document.querySelector('.added-scripts');
+    const styleContainer = document.querySelector('head');
 
-    await clearScriptsContainer();
-
+    await clearScriptsAndStylesContainer();
 
     let htmlUrl;
     if (page.startsWith('lab_')) {
@@ -23,23 +30,47 @@ async function loadPageToIndex(page) {
     }
 
     let scriptUrl = `/js/${page}.js`;
+    const styleUrl = `assets/css/${page}.css`;
 
     console.log('Fetching:', htmlUrl);
     console.log('Loading Script:', scriptUrl);
+    console.log('Loading CSS:', styleUrl);
 
     try {
-        const response = await fetch(htmlUrl);
-        if (!response.ok) throw new Error(`Page ${page} not found!`);
+        // Load the CSS
+        await new Promise((resolve, reject) => {
+            const newStyling = document.createElement('link');
+            newStyling.rel = 'stylesheet';
+            newStyling.href = `${styleUrl}?t=${new Date().getTime()}`;
+            newStyling.setAttribute('data-page', page);
+            newStyling.onload = resolve;
+            newStyling.onerror = reject;
+            styleContainer.appendChild(newStyling);
+            console.log(`${page}.css loaded.`);
+        });
 
-        mainContainer.innerHTML = await response.text();
+        // Load the HTML after the CSS is done
+        const htmlResponse = await fetch(htmlUrl);
+        if (!htmlResponse.ok) throw new Error(`Page ${page} not found!`);
+
+        mainContainer.innerHTML = await htmlResponse.text();
         console.log(`${page}.html loaded.`);
 
-        const newScript = document.createElement('script');
-        newScript.src = `${scriptUrl}?t=${new Date().getTime()}`;
-        newScript.type = 'module';
-        newScript.async = false;
+       try{
+           await new Promise((resolve, reject) => {
+               const newScript = document.createElement('script');
+               newScript.src = `${scriptUrl}?t=${new Date().getTime()}`;
+               newScript.type = 'module';
+               newScript.async = false;
+               newScript.onload = resolve;
+               newScript.onerror = reject;
+               scriptsContainer.appendChild(newScript);
+           });
+       }catch(error){
+           console.log("No js file found");
+       }
 
-        scriptsContainer.appendChild(newScript);
+
     } catch (error) {
         console.error('Error loading page:', error);
         const response = await fetch('/pages/404.html');
