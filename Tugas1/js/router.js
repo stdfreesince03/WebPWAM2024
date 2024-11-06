@@ -6,8 +6,7 @@ async function clearScriptsAndStylesContainer() {
         }
         console.log('.added-scripts container cleared');
     }
-    const styleContainer = document.querySelector('head');
-    const dynamicStyles = styleContainer.querySelectorAll('link[rel="stylesheet"]:not([href="./assets/css/index.css"])');
+    const dynamicStyles = document.head.querySelectorAll('link[rel="stylesheet"]:not([href="./assets/css/index.css"])');
     dynamicStyles.forEach(style => {
         style.remove();
     });
@@ -18,7 +17,6 @@ async function clearScriptsAndStylesContainer() {
 async function loadPageToIndex(page) {
     const mainContainer = document.querySelector('main');
     const scriptsContainer = document.querySelector('.added-scripts');
-    const styleContainer = document.querySelector('head');
 
     await clearScriptsAndStylesContainer();
 
@@ -38,16 +36,18 @@ async function loadPageToIndex(page) {
 
     try {
         // Load the CSS
-        await new Promise((resolve, reject) => {
-            const newStyling = document.createElement('link');
-            newStyling.rel = 'stylesheet';
-            newStyling.href = `${styleUrl}?t=${new Date().getTime()}`;
-            newStyling.setAttribute('data-page', page);
-            newStyling.onload = resolve;
-            newStyling.onerror = reject;
-            styleContainer.appendChild(newStyling);
-            console.log(`${page}.css loaded.`);
-        });
+        if(page !== 'pricing'){
+            await new Promise((resolve, reject) => {
+                const newStyling = document.createElement('link');
+                newStyling.rel = 'stylesheet';
+                newStyling.href = `${styleUrl}?t=${new Date().getTime()}`;
+                newStyling.setAttribute('data-page', page);
+                newStyling.onload = resolve;
+                newStyling.onerror = reject;
+                document.head.appendChild(newStyling);
+                console.log(`${page}.css loaded.`);
+            });
+        }
 
         // Load the HTML after the CSS is done
         const htmlResponse = await fetch(htmlUrl);
