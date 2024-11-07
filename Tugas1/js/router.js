@@ -23,12 +23,11 @@ async function loadPageToIndex(page) {
 
     await clearScriptsAndStylesContainer();
 
-    let htmlUrl;
-    if (page.startsWith('lab_')) {
-        htmlUrl = `/pages/${page}.html`;
-    } else {
-        htmlUrl = `/pages/${page}.html`;
+    let htmlUrl = `/pages/main/${page}.html`;
+    if(page.startsWith('lab_')){
+         htmlUrl = `/pages/lab/${page}.html`;
     }
+
 
     let scriptUrl = `/js/${page}.js`;
     const styleUrl = `/assets/css/${page}.css`;
