@@ -38,7 +38,7 @@ async function loadPageToIndex(page) {
     console.log('Loading CSS:', styleUrl);
 
     try {
-        // Load the CSS
+
 
         await new Promise((resolve, reject) => {
                     const newStyling = document.createElement('link');
@@ -52,7 +52,6 @@ async function loadPageToIndex(page) {
                 });
 
 
-        // Load the HTML after the CSS is done
         const htmlResponse = await fetch(htmlUrl);
         if (!htmlResponse.ok) throw new Error(`Page ${page} not found!`);
 
