@@ -31,7 +31,7 @@ async function loadPageToIndex(page) {
     }
 
     let scriptUrl = `/js/${page}.js`;
-    const styleUrl = `assets/css/${page}.css`;
+    const styleUrl = `/assets/css/${page}.css`;
 
     console.log('Fetching:', htmlUrl);
     console.log('Loading Script:', scriptUrl);
