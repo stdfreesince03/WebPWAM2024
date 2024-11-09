@@ -1,19 +1,23 @@
 import './styles/App.css'
 import NavBar from "./components/NavBar.jsx";
-import HomePage from "./pages/index/HomePage.jsx";
 import './styles/Page.css'
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/main/Home.jsx";
+
+
+
 
 function App() {
 
   return (
     <>
-        <NavBar>
-
-        </NavBar>
+        <NavBar></NavBar>
         <div className="page-content">
-            <HomePage></HomePage>
+            {/*<Lab></Lab>*/}
+            {/*<Pricing></Pricing>*/}
+            <Home></Home>
         </div>
-
+        <Footer></Footer>
     </>
   )
 }

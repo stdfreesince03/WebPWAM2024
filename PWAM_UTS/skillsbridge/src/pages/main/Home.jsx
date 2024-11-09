@@ -1,7 +1,7 @@
 import '../../styles/Home.css';
 import Carousel from "../../components/Carousel.jsx";
 
-export default function HomePage() {
+export default function Home() {
     return (
         <div className="home-page">
                 <section id="slogan-main-nav">
@@ -241,6 +241,19 @@ export default function HomePage() {
                                     <li>✔️ Limited course materials.</li>
                                     <li>✔️ Basic support.</li>
                                     <li>❌ No certification.</li>
+                                </ul>
+                                <button className="btn primary-btn">Get Started</button>
+                            </div>
+                            <div className="pricing-card">
+                                <div className="card-header">Pro Plan</div>
+                                <div className="card-price">
+                                    <span className="price">$79</span>/month
+                                </div>
+                                <ul className="features-list">
+                                    <li>✔️ Unlimited access to all courses.</li>
+                                    <li>✔️ Complete course materials.</li>
+                                    <li>✔️ Priority support.</li>
+                                    <li>✔️ Certification on completion.</li>
                                 </ul>
                                 <button className="btn primary-btn">Get Started</button>
                             </div>

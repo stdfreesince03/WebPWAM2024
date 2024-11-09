@@ -1,0 +1,321 @@
+
+.container-pricing-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.pricing-header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.pricing-header h1 {
+    font-size: 2.5rem;
+    color: #9f79e6;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.pricing-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-btn.active {
+    background-color: #9f79e6;
+    color: #fff;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan-header {
+    font-size: 1.5rem;
+    color: #333;
+    background-color: #ece1ff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plan-price {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.plan-price span {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.features {
+    margin: 1rem 0;
+}
+
+.feature {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0.5rem 0;
+}
+
+.get-started {
+    background-color: #9f79e6;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.get-started:hover {
+    background-color: #8b6fd1;
+}
+
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 80%;
+    }
+}
+
+/* Pricing Section */
+.pricing-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-toggle-btn {
+    background-color: #9f79e6;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pricing-toggle-btn.active {
+    background-color: #8b6fd1;
+}
+
+.pricing-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    width: calc(50% - 2rem);
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #9f79e6;
+    margin: 1rem 0;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.get-started {
+    background-color: #9f79e6;
+    color: #fff;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.get-started:hover {
+    background-color: #8b6fd1;
+}
+
+.faq-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem 1rem;
+    background-color: #fff;
+}
+
+.faq-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.faq-header h2 {
+    font-size: 2rem;
+    color: #9f79e6;
+    margin-bottom: 0.5rem;
+}
+
+.faq-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.see-all-faqs {
+    background-color: #9f79e6;
+    color: #fff;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-all-faqs:hover {
+    background-color: #8b6fd1;
+}
+
+.faq-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: #f4f4f4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #9f79e6;
+}
+
+.enroll-process {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 0.5rem;
+}
+
+.enroll-process span {
+    font-size: 0.95rem;
+}
+
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .faq-header {
+        text-align: center;
+    }
+
+    .see-all-faqs {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/*#loadOverlay{display: none;}*/
+
+
