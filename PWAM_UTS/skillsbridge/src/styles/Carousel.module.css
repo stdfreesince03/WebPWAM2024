@@ -1,0 +1,67 @@
+.carousel-embed {
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem auto 1.25rem;
+    padding: 0.5rem;
+    border-radius: 0.35rem;
+    border: 0.2rem solid #bb99fe;
+    background-color: #f7f7f8;
+    min-width: 200px;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Adjusted for larger screens */
+    animation: slide 20s linear infinite;
+    width: calc(200% + 2rem * 12); /* Width for the continuous effect */
+}
+
+.carousel-slide img {
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.separator {
+    width: 0.05em;
+    min-width: 1px; /* Ensures separator remains visible at small sizes */
+    height: 5em;
+    background-color: #9f79e6;
+    opacity: 0.6;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        gap: 1.5rem; /* Reduce gap on smaller screens */
+    }
+    .carousel-slide img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .carousel-embed {
+        padding: 0.5rem;
+    }
+    .carousel-slide {
+        gap: 1rem; /* Further reduce gap on smaller screens */
+    }
+    .carousel-slide img {
+        height: 30px;
+    }
+}

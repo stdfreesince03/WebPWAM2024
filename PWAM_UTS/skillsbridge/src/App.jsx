@@ -7,7 +7,9 @@ function App() {
 
   return (
     <>
-        <NavBar></NavBar>
+        <NavBar>
+
+        </NavBar>
         <div className="page-content">
             <HomePage></HomePage>
         </div>

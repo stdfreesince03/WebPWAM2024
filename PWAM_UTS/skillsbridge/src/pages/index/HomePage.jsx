@@ -1,4 +1,5 @@
 import '../../styles/Home.css';
+import Carousel from "../../components/Carousel.jsx";
 
 export default function HomePage() {
     return (
@@ -21,7 +22,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <div className="carousel-embed"></div>
+                <Carousel/>
 
                 <img id='stock-home-img' src="../../../public/images/stock_home.png" alt="Stock_Home" />
 
@@ -250,18 +251,60 @@ export default function HomePage() {
                         <div className="faq-header">
                             <h2>Frequently Asked Questions</h2>
                             <p>Still have questions? Contact our team via support@example.com</p>
-                            <button className="btn see-all">See All FAQ's</button>
+                            <button className="btn see-all">See All FAQ&#39;s</button>
                         </div>
 
                         <div className="faq-list">
                             <div className="faq-item">
-                                <div className="faq-question" onClick={() => toggleFAQ()}>
+                                <div className="faq-question">
                                     <span>Can I enroll in multiple courses at once?</span>
                                     <button className="toggle-icon">+</button>
                                 </div>
                                 <div className="faq-answer">
                                     <p>Yes! You can enroll in as many courses as you want and access them
                                         simultaneously.</p>
+                                </div>
+                            </div>
+
+                            <div className="faq-item">
+                                <div className="faq-question" onClick="toggleFAQ(this)">
+                                    <span>What kind of support can I expect from instructors?</span>
+                                    <button className="toggle-icon">+</button>
+                                </div>
+                                <div className="faq-answer">
+                                    <p>Our instructors provide support via live sessions, Q&A forums, and direct
+                                        messages.</p>
+                                </div>
+                            </div>
+
+                            <div className="faq-item">
+                                <div className="faq-question" onClick="toggleFAQ(this)">
+                                    <span>Are the courses self-paced or do they have specific start and end dates?</span>
+                                    <button className="toggle-icon">+</button>
+                                </div>
+                                <div className="faq-answer">
+                                    <p>Most courses are self-paced, but some have set schedules with start and end
+                                        dates.</p>
+                                </div>
+                            </div>
+
+                            <div className="faq-item">
+                                <div className="faq-question" onClick="toggleFAQ(this)">
+                                    <span>Are there any prerequisites for the courses?</span>
+                                    <button className="toggle-icon">+</button>
+                                </div>
+                                <div className="faq-answer">
+                                    <p>Some courses require prior knowledge, but many are designed for beginners.</p>
+                                </div>
+                            </div>
+
+                            <div className="faq-item">
+                                <div className="faq-question" onClick="toggleFAQ(this)">
+                                    <span>Can I download the course materials for offline access?</span>
+                                    <button className="toggle-icon">+</button>
+                                </div>
+                                <div className="faq-answer">
+                                    <p>Yes, most course materials are available for download to access offline.</p>
                                 </div>
                             </div>
                         </div>
