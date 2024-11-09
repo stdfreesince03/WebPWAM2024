@@ -1,6 +1,7 @@
 
 import '../styles/NavBar.css'
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 export default function NavBar(){
     const [isSideBarOpen,setSideBarOpen] = useState(false);
@@ -35,12 +36,12 @@ export default function NavBar(){
                                 <img src="../../public/logos/logo_main.png" alt="Logo"/>
                             </div>
                             <div className="nav-list nav-links">
-                                <li><a href="#" className="nav-link" data-page="home">Home</a></li>
-                                <li><a href="#" className="nav-link" data-page="courses">Courses</a></li>
-                                <li><a href="#" className="nav-link" data-page="about">About</a></li>
-                                <li><a href="#" className="nav-link" data-page="pricing">Pricing</a></li>
-                                <li><a href="#" className="nav-link" data-page="contact">Contact</a></li>
-                                <li><a href="#" className="nav-link" data-page="lab">Labs</a></li>
+                                <li><Link to="/home" className="nav-link">Home</Link></li>
+                                <li><Link to="/courses" className="nav-link" >Courses</Link></li>
+                                <li><Link to="/about" className="nav-link" >About</Link></li>
+                                <li><Link to="/pricing" className="nav-link">Pricing</Link></li>
+                                <li><Link to="/contact" className="nav-link" >Contact</Link></li>
+                                <li><Link to="/labs" className="nav-link">Labs</Link></li>
                             </div>
 
                         </ul>
@@ -57,13 +58,14 @@ export default function NavBar(){
 
             {isSideBarOpen && <div className="sidebar-container">
                 <ul className="sidebar">
-                    <li><a id="sidebar-close" onClick={()=>toggleSideBar(false)}><img src="../../public/logos/sidebarX.svg" alt="SideBarClose"/></a></li>
-                    <li><a href="#" data-page="home">Home</a></li>
-                    <li><a href="#" data-page="courses">Courses</a></li>
-                    <li><a href="#" data-page="about">About</a></li>
-                    <li><a href="#" data-page="pricing">Pricing</a></li>
-                    <li><a href="#" data-page="contact">Contact</a></li>
-                    <li><a href="#" data-page="lab">Labs</a></li>
+                    <li><a id="sidebar-close" onClick={() => toggleSideBar(false)}><img
+                        src="../../public/logos/sidebarX.svg" alt="SideBarClose"/></a></li>
+                    <li><Link to="/home" className="nav-link">Home</Link></li>
+                    <li><Link to="/courses" className="nav-link">Courses</Link></li>
+                    <li><Link to="/about" className="nav-link">About</Link></li>
+                    <li><Link to="/pricing" className="nav-link">Pricing</Link></li>
+                    <li><Link to="/contact" className="nav-link">Contact</Link></li>
+                    <li><Link to="/labs" className="nav-link">Labs</Link></li>
                 </ul>
             </div>}
 
