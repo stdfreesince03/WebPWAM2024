@@ -234,7 +234,7 @@ export default function Home() {
                             <div className="pricing-card">
                                 <div className="card-header">Free Plan</div>
                                 <div className="card-price">
-                                    <span className="price">$0</span>/month
+                                    <span id="price-1">$0</span>/month
                                 </div>
                                 <ul className="features-list">
                                     <li>✔️ Access to selected free courses.</li>
@@ -247,7 +247,7 @@ export default function Home() {
                             <div className="pricing-card">
                                 <div className="card-header">Pro Plan</div>
                                 <div className="card-price">
-                                    <span className="price">$79</span>/month
+                                    <span id="price-2">$79</span>/month
                                 </div>
                                 <ul className="features-list">
                                     <li>✔️ Unlimited access to all courses.</li>

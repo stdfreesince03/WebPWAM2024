@@ -369,8 +369,8 @@
 
 
 #courses {
-    padding: 2rem 1.5vw;
     background-color: #f7f7f8;
+    padding: 2rem 1.5vw 0.75rem;
 }
 
 .courses-header {
@@ -414,6 +414,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    min-width: 200px;
+    margin:auto;
 }
 
 .course-card {
@@ -483,7 +485,7 @@
     background-color: #7d5fc9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 782px) {
     .courses-list {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -493,7 +495,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 508px) {
     .courses-list {
         grid-template-columns: 1fr;
     }
@@ -520,6 +522,7 @@
     background-color: #f7f7f8;
     margin:auto;
     width:100%;
+    min-width: 100%;
 }
 
 .pricing-header h2 {
@@ -559,16 +562,35 @@
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .pricing-card {
     background-color: white;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    width: 300px;
+    width: calc(50% - 0.75rem); /* Half width minus half the gap */
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
+
+@media (max-width: 768px) {
+    .pricing-cards {
+        width: 100%;
+        padding:0;
+    }
+
+    .pricing-card {
+        min-width: 100%;
+        margin: 0; /* Ensure no extra margins */
+    }
+}
+
+
 
 .card-header {
     font-size: 1.5rem;
@@ -580,11 +602,14 @@
 }
 
 .card-price {
-    font-size: 2rem;
+    font-size: 1em;
     margin: 1rem 0;
     color: #b08be9;
 }
 
+#price-1,#price-2{
+    font-size: 1.75em;
+}
 
 .features-list {
     list-style: none;
@@ -595,7 +620,7 @@
 .features-list li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #e5e5e5;
-    font-size: 0.9rem;
+    font-size: 0.6em;
 }
 
 .btn.primary-btn {
@@ -613,36 +638,59 @@
     background-color: #a27fe8;
 }
 
-
 /* FAQ Section Styling */
 section.faq-section {
     padding: 3rem 1.5vw;
     background-color: #f7f7f8;
     margin: auto;
-    width:80%;
+    width: 80%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .faq-header {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: left;
+    margin-right: 2rem;
+    max-width: 300px;
 }
 
 .faq-header h2 {
     font-size: 2rem;
     color: #9f79e6;
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
 .faq-header p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.faq-header .btn {
+    background-color: white;
+    border-radius: 0.25rem;
+    border: 1px solid #9f79e6;
+    color: #9f79e6;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-header .btn:hover {
+    background-color: #f3f0f8;
+    color: #7d5fc9;
 }
 
 .faq-list {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 700px;
 }
 
 .faq-item {
@@ -651,46 +699,60 @@ section.faq-section {
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin: 0.5rem 0; /* Reduce margin between items */
+    padding: 0.25rem; /* Reduce padding inside the FAQ item */
 }
 
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #f3f0f8;
+    padding: 0.75rem 1rem; /* Adjust padding around question text */
     font-weight: bold;
     color: #333;
+    background-color: #f3f0f8;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
 .faq-question:hover {
-    background-color: #eae4f8;
-}
-
-.faq-answer {
-    display: none;
-    padding: 1rem;
-    background-color: #fff;
-    border-top: 1px solid #e0e0e0;
-    animation: fadeIn 0.3s;
+    background-color: #eae4f8; /* Slight grey on hover */
 }
 
 .toggle-icon {
     font-size: 1.2rem;
     color: #9f79e6;
     transition: transform 0.3s;
+    border: 1px solid #9f79e6;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
 
 .faq-item.open .toggle-icon {
     transform: rotate(45deg);
 }
 
+.faq-answer {
+    display: none;
+    padding: 0.75rem 1rem; /* Adjust padding around answer text */
+    font-size: 0.9rem;
+    color: #666;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    animation: fadeIn 0.3s ease;
+}
+
 .faq-item.open .faq-answer {
     display: block;
 }
 
-
+/* Keyframe for Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -699,5 +761,50 @@ section.faq-section {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .faq-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin: 0;
+    }
+
+    .faq-list {
+        width: 100%;
+    }
+
+    .faq-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-header p,
+    .faq-question,
+    .faq-answer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-header p,
+    .faq-question,
+    .faq-answer {
+        font-size: 0.85rem;
+    }
+
+    .faq-header .btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
     }
 }

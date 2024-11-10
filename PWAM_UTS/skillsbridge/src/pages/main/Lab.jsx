@@ -1,4 +1,5 @@
 import '../../styles/Lab.css'
+import {Link} from "react-router-dom";
 
 export default function Lab() {
     return(
@@ -15,7 +16,7 @@ export default function Lab() {
                             <h2>Car Jump</h2>
                             <p>Jump!!!</p>
 
-                            <a href="#" className="btn visit-lab">Start Lab</a>
+                            <Link to="/labs/1" className="btn visit-lab">Start Lab</Link>
                         </div>
                 </div>
             </div>
