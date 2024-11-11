@@ -12,6 +12,7 @@ import Pricing from "./pages/main/ Pricing.jsx";
 import LabLayout from "./layouts/LabLayout.jsx";
 import LabGame from "./pages/lab/LabGame.jsx";
 import LoginPage from './pages/main/Login.jsx';
+import SignUpPage from "./pages/main/SignUp.jsx";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,13 @@ const router = createBrowserRouter([
         element: <IndexLayout/>,
         children:[
             {path:"",element:<LoginPage/>},
+        ]
+    },
+    {
+        path:"signup",
+        element: <IndexLayout/>,
+        children:[
+            {path:"",element:<SignUpPage/>},
         ]
     }
 ]);
