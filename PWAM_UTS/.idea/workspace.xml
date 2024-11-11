@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/components/Faq.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/HomeFaq.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/PricingFaq.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/components/Footer.jsx" afterDir="false" />
+    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="tugas 1 , sort of done">
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/components/PricingCards.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/data/pricingData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/PricingCards_Pricing.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/main/ Pricing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/pages/main/ Pricing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/main/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/pages/main/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Pricing.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ogISXYp5H3lHugwo6CZXzst36T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,5 +79,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tugas 1 , sort of done" />
+    <option name="LAST_COMMIT_MESSAGE" value="tugas 1 , sort of done" />
   </component>
 </project>

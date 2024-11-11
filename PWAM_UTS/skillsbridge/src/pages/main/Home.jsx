@@ -3,6 +3,7 @@ import Carousel from "../../components/Carousel.jsx";
 import Faq from "../../components/Faq.jsx";
 import {homeFaq} from "../../data/faqData.js";
 import homeFaqStyles from "../../styles/HomeFaq.module.scss"
+import PricingCards from "../../components/PricingCards.jsx";
 
 export default function Home() {
     return (
@@ -221,6 +222,7 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
+
 
                     <section className="pricing-section">
                         <div className="pricing-header">
