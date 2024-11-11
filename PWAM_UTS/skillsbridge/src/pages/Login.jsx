@@ -1,4 +1,4 @@
-// src/pages/LoginPage.jsx
+
 import React from 'react';
 import Testimonials from '../components/Testimonials/Testimonials.jsx';
 import LoginBox from '../components/LoginBox/LoginBox.jsx';
