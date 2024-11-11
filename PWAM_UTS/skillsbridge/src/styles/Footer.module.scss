@@ -17,19 +17,19 @@
 
   &-column {
     flex: 1;
-    margin: 0.5rem 1rem; // Reduced margin
+    margin: 0.5rem 1rem; 
   
 
     h4 {
       color: #9f79e6;
-      margin-bottom: 0.5rem; // Reduced margin
+      margin-bottom: 0.5rem; 
     }
 
     p,
     a {
       color: #666;
-      font-size: 0.85rem; // Slightly smaller font for compactness
-      margin: 0.2rem 0; // Reduced margin
+      font-size: 0.85rem; 
+      margin: 0.2rem 0; 
       text-decoration: none;
 
       &:hover {

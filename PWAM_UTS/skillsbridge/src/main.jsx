@@ -11,6 +11,7 @@ import Courses from "./pages/main/Courses.jsx";
 import Pricing from "./pages/main/ Pricing.jsx";
 import LabLayout from "./layouts/LabLayout.jsx";
 import LabGame from "./pages/lab/LabGame.jsx";
+import LoginPage from './pages/main/Login.jsx';
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,13 @@ const router = createBrowserRouter([
             {path:":labID",element:<LabGame/>},
         ]
 
+    },
+    {
+        path:"login",
+        element: <IndexLayout/>,
+        children:[
+            {path:"",element:<LoginPage/>},
+        ]
     }
 ]);
 

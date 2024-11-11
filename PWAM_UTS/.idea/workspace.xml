@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="tugas 1 , sort of done">
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/components/PricingCards.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/data/pricingData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/PricingCards_Pricing.module.css" afterDir="false" />
+    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="I'm cooked">
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/components/LoginBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/components/Testimonials.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/pages/main/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/LoginBox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Testimonials.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/main/ Pricing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/pages/main/ Pricing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/main/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/pages/main/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Pricing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsbridge/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/skillsbridge/src/styles/Footer.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +26,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2ogISXYp5H3lHugwo6CZXzst36T" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -34,22 +38,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/OneDrive/Desktop/Tugas1PAWM/PWAM_UTS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\Users\\ASUS\\OneDrive\\Desktop\\Tugas1PAWM\\PWAM_UTS\\skillsbridge\\node_modules\\eslint&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Desktop/Tugas1PAWM/PWAM_UTS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "C:/Users/ASUS/OneDrive/Desktop/Tugas1PAWM/PWAM_UTS/skillsbridge/node_modules/eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -63,7 +75,17 @@
       <workItem from="1731286873745" duration="533000" />
       <workItem from="1731287425549" duration="3367000" />
       <workItem from="1731291284657" duration="4467000" />
+      <workItem from="1731342069506" duration="342000" />
     </task>
+    <task id="LOCAL-00001" summary="I'm cooked">
+      <option name="closed" value="true" />
+      <created>1731333943518</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731333943519</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,7 +103,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tugas 1 , sort of done" />
-    <option name="LAST_COMMIT_MESSAGE" value="tugas 1 , sort of done" />
+    <MESSAGE value="I'm cooked" />
+    <option name="LAST_COMMIT_MESSAGE" value="I'm cooked" />
   </component>
 </project>

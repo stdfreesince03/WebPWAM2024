@@ -49,7 +49,7 @@ export default function NavBar(){
                     <div className="mobile-right-header">
                         <div className="auth-buttons">
                             <a href="#" className="btn secondary">Sign Up</a>
-                            <a href="#" className="btn primary">Login</a>
+                            <Link to="/login" className="btn primary">Login</Link>
                         </div>
                         <a onClick={()=>toggleSideBar(true)} id="hamburger-dropdown"><img src="../../public/logos/hamburger.svg" alt="SidebarDropdown"/></a>
                     </div>
