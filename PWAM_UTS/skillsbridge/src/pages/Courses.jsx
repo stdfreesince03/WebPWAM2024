@@ -1,8 +1,8 @@
 
-import '../../styles/Courses.css';
+import '../styles/Courses.css';
 
 
-export default function Courses() {
+export default function CoursesPage() {
     return (
         <div className="container-courses-list">
 

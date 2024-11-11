@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import BackNav from "../components/BackNav.jsx";
+import BackNav from "../components/BackNav/BackNav.jsx";
 import {Outlet} from "react-router-dom";
 
 const LabLayout = () => {

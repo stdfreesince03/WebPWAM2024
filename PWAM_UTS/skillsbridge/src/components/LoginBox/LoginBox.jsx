@@ -1,6 +1,6 @@
 // src/components/LoginBox.jsx
 import React, { useState } from 'react';
-import '../styles/LoginBox.css';
+import './LoginBox.css';
 
 function LoginBox() {
     const [showPassword, setShowPassword] = useState(false);

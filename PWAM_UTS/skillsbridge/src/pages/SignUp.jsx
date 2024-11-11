@@ -1,6 +1,6 @@
 // src/pages/SignUpPage.jsx
 import React from 'react';
-import '../../styles/SignUp.css';
+import '../styles/SignUp.css';
 
 function SignUpPage() {
     return (
@@ -31,7 +31,7 @@ function SignUpPage() {
                 </form>
 
                 <p className="signup-footer">
-                    Already have an account? <a href="/login">Log In</a>
+                    Already have an account? <a href="/src/pages/Login">Log In</a>
                 </p>
             </div>
         </div>

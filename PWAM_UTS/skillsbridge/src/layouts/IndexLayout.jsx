@@ -1,7 +1,7 @@
-import NavBar from "../components/NavBar.jsx";
-import Footer from "../components/Footer.jsx";
+import NavBar from "../components/NavBar/NavBar.jsx";
+import Footer from "../components/Footer/Footer.jsx";
 import {Outlet} from 'react-router-dom'
-import '../styles/MainPage.css'
+import '../styles/Page.css'
 
 export default function IndexLayout() {
     return (

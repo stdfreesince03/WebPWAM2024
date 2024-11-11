@@ -13,7 +13,7 @@ export default function PricingCards({ data, styles }) {
                 <button className={styles['toggle-btn']}>Yearly</button>
             </div>
 
-            {/* Pricing Cards */}
+            {/* PricingPage Cards */}
             <div className={styles['pricing-cards']}>
                 {data.plans.map((plan, index) => (
                     <div key={index} className={styles['pricing-card']}>

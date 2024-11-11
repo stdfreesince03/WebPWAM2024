@@ -1,6 +1,6 @@
-import '../../styles/Contact.css';
+import '../styles/Contact.css';
 
-export default function Contact() {
+export default function ContactPage() {
     return (
         <div className="container-contact-page">
             <div className="contact-header">

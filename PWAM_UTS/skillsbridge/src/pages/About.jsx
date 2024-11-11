@@ -1,5 +1,5 @@
-import '../../styles/About.css'
-export  default function About() {
+import '../styles/About.css'
+export  default function AboutPage() {
     return (
         <div className="container-about-page">
             <div className="about-header">

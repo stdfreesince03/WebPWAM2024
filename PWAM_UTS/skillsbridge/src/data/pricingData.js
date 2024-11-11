@@ -2,7 +2,7 @@ export const pricingData = {
     header: {
         title: 'Our Pricings',
         description:
-            "Welcome to SkillBridge's Pricing Plan page, where we offer two comprehensive options to cater to your needs: Free and Pro. Explore our pricing options below and choose the one that best fits your requirements."
+            "Welcome to SkillBridge's PricingPage Plan page, where we offer two comprehensive options to cater to your needs: Free and Pro. Explore our pricing options below and choose the one that best fits your requirements."
     },
     plans: [
         {

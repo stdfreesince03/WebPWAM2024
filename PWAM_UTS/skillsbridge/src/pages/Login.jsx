@@ -1,8 +1,8 @@
 // src/pages/LoginPage.jsx
 import React from 'react';
-import Testimonials from '../../components/Testimonials.jsx';
-import LoginBox from '../../components/LoginBox.jsx';
-import '../../styles/Login.css';
+import Testimonials from '../components/Testimonials/Testimonials.jsx';
+import LoginBox from '../components/LoginBox/LoginBox.jsx';
+import '../styles/Login.css';
 
 const testimonialData = [
   {

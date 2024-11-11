@@ -3,29 +3,29 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import IndexLayout from "./layouts/IndexLayout.jsx";
-import Home from "./pages/main/Home.jsx";
-import About from "./pages/main/About.jsx";
-import Contact from "./pages/main/Contact.jsx";
-import Lab from "./pages/main/Lab.jsx";
-import Courses from "./pages/main/Courses.jsx";
-import Pricing from "./pages/main/ Pricing.jsx";
+import HomePage from "./pages/Home.jsx";
+import AboutPage from "./pages/About.jsx";
+import ContactPage from "./pages/Contact.jsx";
+import LabPage from "./pages/Lab.jsx";
+import CoursesPage from "./pages/Courses.jsx";
+import PricingPage from "./pages/ Pricing.jsx";
 import LabLayout from "./layouts/LabLayout.jsx";
-import LabGame from "./pages/lab/LabGame.jsx";
-import LoginPage from './pages/main/Login.jsx';
-import SignUpPage from "./pages/main/SignUp.jsx";
+import LabGame from "./pages/LabGame.jsx";
+import LoginPage from './pages/Login.jsx';
+import SignUpPage from "./pages/SignUp.jsx";
 
 const router = createBrowserRouter([
     {
         path:"/",
         element:<IndexLayout/>,
         children:[
-            {path:"",element:<Home/>},
-            {path:"home",element:<Home/>},
-            {path:"courses",element:<Courses/>},
-            {path:"about",element:<About/>},
-            {path:"contact",element:<Contact/>},
-            {path:"pricing",element:<Pricing/>},
-            {path:"labs",element:<Lab/>}
+            {path:"",element:<HomePage/>},
+            {path:"home",element:<HomePage/>},
+            {path:"courses",element:<CoursesPage/>},
+            {path:"about",element:<AboutPage/>},
+            {path:"contact",element:<ContactPage/>},
+            {path:"pricing",element:<PricingPage/>},
+            {path:"labs",element:<LabPage/>}
         ]
     },
     {

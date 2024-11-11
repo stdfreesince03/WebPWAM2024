@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Carousel.module.css';
+import styles from './Carousel.module.css';
 
 const Carousel = () => {
     // CarouselSlide component, renders a single set of images with separators

@@ -1,5 +1,5 @@
 
-import '../styles/NavBar.css'
+import './NavBar.css'
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
@@ -33,7 +33,7 @@ export default function NavBar(){
                     <nav>
                         <ul className="nav-list">
                             <div className="logo">
-                                <img src="../../public/logos/logo_main.png" alt="Logo"/>
+                                <img src="../../../public/logos/logo_main.png" alt="Logo"/>
                             </div>
                             <div className="nav-list nav-links">
                                 <li><Link to="/home" className="nav-link">Home</Link></li>
@@ -48,10 +48,10 @@ export default function NavBar(){
                     </nav>
                     <div className="mobile-right-header">
                         <div className="auth-buttons">
-                            <a href="#" className="btn secondary">Sign Up</a>
+                            <Link to="/signup" className="btn secondary">Sign Up</Link>
                             <Link to="/login" className="btn primary">Login</Link>
                         </div>
-                        <a onClick={()=>toggleSideBar(true)} id="hamburger-dropdown"><img src="../../public/logos/hamburger.svg" alt="SidebarDropdown"/></a>
+                        <a onClick={()=>toggleSideBar(true)} id="hamburger-dropdown"><img src="../../../public/logos/hamburger.svg" alt="SidebarDropdown"/></a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ export default function NavBar(){
             {isSideBarOpen && <div className="sidebar-container">
                 <ul className="sidebar">
                     <li><a id="sidebar-close" onClick={() => toggleSideBar(false)}><img
-                        src="../../public/logos/sidebarX.svg" alt="SideBarClose"/></a></li>
+                        src="../../../public/logos/sidebarX.svg" alt="SideBarClose"/></a></li>
                     <li><Link to="/home" className="nav-link">Home</Link></li>
                     <li><Link to="/courses" className="nav-link">Courses</Link></li>
                     <li><Link to="/about" className="nav-link">About</Link></li>
