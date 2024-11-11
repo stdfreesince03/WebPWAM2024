@@ -3,6 +3,7 @@ import styles from "../styles/Footer.module.scss"
 
 export default function Footer() {
     return (
+        // eslint-disable-next-line react/react-in-jsx-scope
         <footer className={styles.footer}>
             <div className={styles["footer-container"]}>
                 <div className={styles["footer-column"]}>

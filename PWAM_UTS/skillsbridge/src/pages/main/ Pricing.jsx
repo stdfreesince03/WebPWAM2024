@@ -1,4 +1,7 @@
 import '../../styles/Pricing.css'
+import Faq from "../../components/Faq.jsx";
+import {pricingFaqData} from "../../data/faqData.js";
+import pricingFaqStyles from "../../styles/PricingFaq.module.scss"
 
 export default function Pricing(){
     return (
@@ -46,74 +49,75 @@ export default function Pricing(){
                     <button className="get-started">Get Started</button>
                 </div>
             </div>
-            <div className="faq-section">
-                <div className="faq-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Still have any questions? Contact our Team via support@skillbridge.com</p>
-                    <button className="see-all-faqs">See All FAQ&#39;s</button>
-                </div>
+            {/*<div className="faq-section">*/}
+            {/*    <div className="faq-header">*/}
+            {/*        <h2>Frequently Asked Questions</h2>*/}
+            {/*        <p>Still have any questions? Contact our Team via support@skillbridge.com</p>*/}
+            {/*        <button className="see-all-faqs">See All FAQ&#39;s</button>*/}
+            {/*    </div>*/}
 
-                <div className="faq-questions">
-                    <div className="faq-item">
-                        <div className="faq-question">
-                            <span>Can I enroll in multiple courses at once?</span>
-                            <button className="faq-toggle">+</button>
-                        </div>
-                        <div className="faq-answer">
-                            <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your
-                                convenience.</p>
-                            <div className="enroll-process">
-                                <span>Enrollment Process for Different Courses</span>
-                                <button className="arrow-btn">→</button>
-                            </div>
-                        </div>
-                    </div>
+            {/*    <div className="faq-questions">*/}
+            {/*        <div className="faq-item">*/}
+            {/*            <div className="faq-question">*/}
+            {/*                <span>Can I enroll in multiple courses at once?</span>*/}
+            {/*                <button className="faq-toggle">+</button>*/}
+            {/*            </div>*/}
+            {/*            <div className="faq-answer">*/}
+            {/*                <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your*/}
+            {/*                    convenience.</p>*/}
+            {/*                <div className="enroll-process">*/}
+            {/*                    <span>Enrollment Process for Different Courses</span>*/}
+            {/*                    <button className="arrow-btn">→</button>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
 
-                    <div className="faq-item">
-                        <div className="faq-question">
-                            <span>What kind of support can I expect from instructors?</span>
-                            <button className="faq-toggle">+</button>
-                        </div>
-                        <div className="faq-answer">
-                            <p>You can expect regular feedback, Q&A sessions, and guidance through assignments and
-                                projects.</p>
-                        </div>
-                    </div>
+            {/*        <div className="faq-item">*/}
+            {/*            <div className="faq-question">*/}
+            {/*                <span>What kind of support can I expect from instructors?</span>*/}
+            {/*                <button className="faq-toggle">+</button>*/}
+            {/*            </div>*/}
+            {/*            <div className="faq-answer">*/}
+            {/*                <p>You can expect regular feedback, Q&A sessions, and guidance through assignments and*/}
+            {/*                    projects.</p>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
 
-                    <div className="faq-item">
-                        <div className="faq-question">
-                            <span>Are the courses self-paced or do they have specific start and end dates?</span>
-                            <button className="faq-toggle">+</button>
-                        </div>
-                        <div className="faq-answer">
-                            <p>Most courses are self-paced, allowing you to learn at your own speed. Some have set start
-                                and end dates for cohort-based learning.</p>
-                        </div>
-                    </div>
+            {/*        <div className="faq-item">*/}
+            {/*            <div className="faq-question">*/}
+            {/*                <span>Are the courses self-paced or do they have specific start and end dates?</span>*/}
+            {/*                <button className="faq-toggle">+</button>*/}
+            {/*            </div>*/}
+            {/*            <div className="faq-answer">*/}
+            {/*                <p>Most courses are self-paced, allowing you to learn at your own speed. Some have set start*/}
+            {/*                    and end dates for cohort-based learning.</p>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
 
-                    <div className="faq-item">
-                        <div className="faq-question">
-                            <span>Are there any prerequisites for the courses?</span>
-                            <button className="faq-toggle">+</button>
-                        </div>
-                        <div className="faq-answer">
-                            <p>Some advanced courses may require basic knowledge in related topics. Prerequisites, if
-                                any, will be listed in the course description.</p>
-                        </div>
-                    </div>
+            {/*        <div className="faq-item">*/}
+            {/*            <div className="faq-question">*/}
+            {/*                <span>Are there any prerequisites for the courses?</span>*/}
+            {/*                <button className="faq-toggle">+</button>*/}
+            {/*            </div>*/}
+            {/*            <div className="faq-answer">*/}
+            {/*                <p>Some advanced courses may require basic knowledge in related topics. Prerequisites, if*/}
+            {/*                    any, will be listed in the course description.</p>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
 
-                    <div className="faq-item">
-                        <div className="faq-question">
-                            <span>Can I download the course materials for offline access?</span>
-                            <button className="faq-toggle">+</button>
-                        </div>
-                        <div className="faq-answer">
-                            <p>Yes, many course materials can be downloaded for offline use. This includes PDFs, videos,
-                                and resources provided during the course.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/*        <div className="faq-item">*/}
+            {/*            <div className="faq-question">*/}
+            {/*                <span>Can I download the course materials for offline access?</span>*/}
+            {/*                <button className="faq-toggle">+</button>*/}
+            {/*            </div>*/}
+            {/*            <div className="faq-answer">*/}
+            {/*                <p>Yes, many course materials can be downloaded for offline use. This includes PDFs, videos,*/}
+            {/*                    and resources provided during the course.</p>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*</div>*/}
+            <Faq data={pricingFaqData} styles={pricingFaqStyles}></Faq>
+
         </div>
     );
 }
