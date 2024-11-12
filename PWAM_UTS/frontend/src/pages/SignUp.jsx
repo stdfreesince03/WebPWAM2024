@@ -25,7 +25,7 @@ function SignUpPage() {
                     <div className="or-divider">OR</div>
 
                     <button className="google-button">
-                        <img src="/images/google-icon.png" alt="Google Icon" />
+                        <img src="/logos/OAuth.png" alt="Google Icon" id="google-oauth-icon" />
                         Sign Up with Google
                     </button>
                 </form>

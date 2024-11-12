@@ -37,7 +37,7 @@ export default function LoginBox() {
 
             <div className="or-divider">or</div>
             <button className="google-button">
-                <img src="/path-to-google-icon" alt="Google Icon" />
+                <img src="/logos/OAuth.png" id="google-oauth-icon" alt="Google Icon" />
                 Login with Google
             </button>
 

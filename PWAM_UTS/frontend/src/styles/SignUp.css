@@ -129,3 +129,9 @@
 .signup-footer a:hover {
     text-decoration: underline;
 }
+
+#google-oauth-icon{
+    width:2em;
+    margin-right: 1.5em;
+    height:auto;
+}

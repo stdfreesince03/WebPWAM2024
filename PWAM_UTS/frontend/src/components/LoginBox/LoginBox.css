@@ -1,4 +1,4 @@
-/* src/styles/LoginBox.css */
+
 
 .auth-box {
   background-color: white;
@@ -193,4 +193,10 @@
 
 .toggle-slider.active {
   transform: translateX(26px);
+}
+
+#google-oauth-icon{
+  width:2em;
+  margin-right: 1.5em;
+  height:auto;
 }

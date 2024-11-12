@@ -4,100 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="I'm cooked">
+    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="I'm cooked 2">
+      <change afterPath="$PROJECT_DIR$/frontend/public/logos/OAuth.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseFrontEnd_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseFrontEnd_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseFrontEnd_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseFrontEnd_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseFrontEnd_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseFrontEnd_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseGraphic_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseGraphic_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseGraphic_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseGraphic_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseGraphic_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseGraphic_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseMobile_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseMobile_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseMobile_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseMobile_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseMobile_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseMobile_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseUI_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseUI_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseUI_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseUI_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseUI_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseUI_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseWeb_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseWeb_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseWeb_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseWeb_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/CourseWeb_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/CourseWeb_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/adv_js.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/adv_js.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/car_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/car_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-5.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-6.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/carous-7.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/carous-7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/front_end_web.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/front_end_web.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/graphic_design.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/graphic_design.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/lab1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/lab1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/mobil_app_dev.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/mobil_app_dev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/stock_home.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/stock_home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/ui_ux_design.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/ui_ux_design.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/images/web_design.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/images/web_design.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/labs/lab_1/lab_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/labs/lab_1/lab_1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/labs/lab_1/lab_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/labs/lab_1/lab_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/labs/lab_1/lab_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/labs/lab_1/lab_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/logos/hamburger.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logos/hamburger.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/logos/logo_main.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logos/logo_main.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/logos/sidebarX.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logos/sidebarX.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/logos/slogan-lightning.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logos/slogan-lightning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/public/logos/slogan-sparkle.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/logos/slogan-sparkle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/BackNav/BackNav.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BackNav/BackNav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/BackNav/BackNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BackNav/BackNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Carousel/Carousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Carousel/Carousel.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Carousel/Carousel.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Faq/Faq.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Faq/HomeFaq.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Faq/HomeFaq.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Faq/PricingFaq.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Faq/PricingFaq.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Footer/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/LoginBox/LoginBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/LoginBox/LoginBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/NavBar/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/PricingCards/PricingCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PricingCards/PricingCards.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/PricingCards/PricingCards_Pricing.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PricingCards/PricingCards_Pricing.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Testimonials/Testimonials.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Testimonials/Testimonials.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/components/Testimonials/Testimonials.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Testimonials/Testimonials.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/data/faqData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/faqData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/data/pricingData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/pricingData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/layouts/IndexLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/IndexLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/layouts/LabLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/LabLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/ Pricing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ Pricing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/Courses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Courses.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/Lab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Lab.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/LabGame.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LabGame.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/pages/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Contact.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Courses.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Courses.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Lab.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Lab.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Page.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/Pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Pricing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/SignUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsbridge/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,9 +47,15 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -160,7 +77,7 @@
       <workItem from="1731287425549" duration="3367000" />
       <workItem from="1731291284657" duration="4467000" />
       <workItem from="1731342069506" duration="342000" />
-      <workItem from="1731408318105" duration="4640000" />
+      <workItem from="1731408318105" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="I'm cooked">
       <option name="closed" value="true" />
@@ -170,7 +87,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731333943519</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="I'm cooked 2">
+      <option name="closed" value="true" />
+      <created>1731414360921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731414360921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +116,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tugas 1 , sort of done" />
     <MESSAGE value="I'm cooked" />
-    <option name="LAST_COMMIT_MESSAGE" value="I'm cooked" />
+    <MESSAGE value="I'm cooked 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="I'm cooked 2" />
   </component>
 </project>
