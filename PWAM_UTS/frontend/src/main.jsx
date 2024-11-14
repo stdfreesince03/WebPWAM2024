@@ -14,6 +14,8 @@ import LabGame from "./pages/LabGame.jsx";
 import LoginPage from './pages/Login.jsx';
 import SignUpPage from "./pages/SignUp.jsx";
 
+// console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+
 const router = createBrowserRouter([
     {
         path:"/",
@@ -57,3 +59,6 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}/>
   </StrictMode>,
 )
+
+
+

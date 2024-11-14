@@ -21,7 +21,7 @@ export default function LoginBox() {
             >
                 <input type="email" name="email" placeholder="Email" required />
                 <input type="password" name="password" placeholder="Password" required />
-
+                <input type="hidden" name="role" value={isInstructor? 'instructor' : 'student'}  />
                 <div className="auth-options">
                     <label className="toggle-label">
                         <span>{isInstructor ? 'Instructor' : 'Student'}</span>
