@@ -4,6 +4,7 @@ import {Outlet} from 'react-router-dom'
 import '../styles/Page.css'
 
 export default function IndexLayout() {
+
     return (
         <div>
             <NavBar></NavBar>

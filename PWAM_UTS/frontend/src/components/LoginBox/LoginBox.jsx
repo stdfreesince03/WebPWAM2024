@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import {Form, useNavigate} from 'react-router-dom';
 import './LoginBox.css';
 import api from '../../services/axios.js';
+import updateIsLoggedIn from "../../redux/slices/auth-thunks.js";
+import {useDispatch} from "react-redux";
 
 
 
@@ -9,12 +11,14 @@ export default function LoginBox() {
     const [isInstructor, setIsInstructor] = useState(false);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleToggle = () => {
         setIsInstructor((prev) => !prev);
     };
 
     async function postLogin(event){
+        console.log('postLogin')
         event.preventDefault();
         const formData = new FormData(event.target);
         const email = formData.get('email').trim();
@@ -25,15 +29,18 @@ export default function LoginBox() {
             const {data} = await api.post('/login',{
                 email,password,role
             },{
+                withCredentials: true,
                 headers:{
                     'Content-Type': 'application/json',
                 }
             });
 
-            if(data.user){
+            if (data.user) {
                 console.log('Login Successful');
+                dispatch(updateIsLoggedIn()); // Update Redux state
                 navigate('/');
             }
+
         }catch(error){
             if (error.response) {
                 console.log(error.response.data.error);

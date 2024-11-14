@@ -30,7 +30,7 @@ export async function login(req,res){
             ,{expiresIn:"30d"});
 
         res.cookie("token",token,{
-            httpOnly:true,
+            httpOnly:process.env.NODE_ENV === 'production',
             secure: process.env.NODE_ENV === 'production',
             maxAge:30 * 24 * 60 * 60 * 1000
         })
