@@ -1,13 +1,49 @@
 import React, { useState } from 'react';
-import { Form } from 'react-router-dom';
+import {Form, useNavigate} from 'react-router-dom';
 import './LoginBox.css';
+import api from '../../services/axios.js';
+
+
 
 export default function LoginBox() {
     const [isInstructor, setIsInstructor] = useState(false);
 
+    const navigate = useNavigate();
+
     const handleToggle = () => {
         setIsInstructor((prev) => !prev);
     };
+
+    async function postLogin(event){
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const email = formData.get('email').trim();
+        const password = formData.get('password').trim();
+        const role = formData.get('role').trim();
+
+        try{
+            const {data} = await api.post('/login',{
+                email,password,role
+            },{
+                headers:{
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if(data.user){
+                console.log('Login Successful');
+                navigate('/');
+            }
+        }catch(error){
+            if (error.response) {
+                console.log(error.response.data.error);
+            } else {
+                console.log("An unexpected error occurred.");
+            }
+        }
+
+
+    }
 
     return (
         <div className="auth-box">
@@ -16,8 +52,8 @@ export default function LoginBox() {
 
             <Form
                 method="post"
-                action={`/login/${isInstructor ? 'instructor' : 'student'}`}
                 className="auth-form"
+                onSubmit={(event)=>postLogin(event)}
             >
                 <input type="email" name="email" placeholder="Email" required />
                 <input type="password" name="password" placeholder="Password" required />

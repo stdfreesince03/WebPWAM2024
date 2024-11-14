@@ -1,34 +1,53 @@
-import db from '../config/db'
+import db from '../config/db.js'
 import bcrypt from 'bcrypt'
+import jsonwebtoken from "jsonwebtoken";
 
 export async function signUp(req,res){
 
-    try{
-        const email = req.body.email;
-        const password = req.body.password;
-        const role = req.body.role;
+    try {
+        const { first_name,last_name,email, password, role } = req.body;
 
-        const {data:user,error : fetchErr} = await db
+        let { data: user, error: fetchErr } = await db
             .from(role)
             .select('*')
-            .eq('email',email);
+            .eq('email', email);
 
-        if(user.length > 0 ){
-            return res.status(409).json({error:'Email already exists'});
+        if (fetchErr) throw fetchErr;
+        if (user.length>0) {
+            for (const user1 of user) {
+                const passwordMatch = await bcrypt.compare(password,user1.password_hash);
+                if(passwordMatch){
+                    return res.json({ message: 'Logging In', user: { email, role } });
+                }
+            }
+            return res.status(409).json({ error: 'Email already exists' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);
-        const {error} = await db
+        const { data: newUser, error: insertError } = await db
             .from(role)
-            .insert({email:email,password:hashedPassword});
+            .upsert({ first_name,last_name,email, password_hash: hashedPassword })
+            .select();
 
-        if(error){
-            return res.status(400).json({error:'Signup Error'});
+        if (insertError) {
+            console.log(insertError);
+            return res.status(400).json({ error: 'Signup Error' });
         }
 
-        return res.json({message:'Signup Successful',user:{email:email}});
+        const token = jsonwebtoken.sign(
+            { id: role === 'instructor' ? newUser.instructor_id : newUser.student_id, email },
+            process.env.JWT_SECRET,
+            { expiresIn: "30d" }
+        );
 
-    }catch(err){
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            maxAge: 30 * 24 * 60 * 60 * 1000  // 30 days
+        });
+
+        return res.json({ message: 'Signup Successful', user: { email, role } });
+    } catch (err) {
         console.log(err);
         res.status(500).json({ error: 'Internal server error' });
     }
