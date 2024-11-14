@@ -2,10 +2,12 @@ import './NavBar.css';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import api from '../../services/axios.js'
+import Logout from "../LogOutButton/Logout.jsx";
 
 export default function NavBar() {
     const [isSideBarOpen, setSideBarOpen] = useState(false);
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); // Get login state from Redux
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
 
     function toggleSideBar(boolValue) {
@@ -39,7 +41,7 @@ export default function NavBar() {
                     <div className="mobile-right-header">
                         <div className="auth-buttons">
                             {isLoggedIn ? (
-                                <button className="btn primary">Logout</button> // Handle logout here if needed
+                                <Logout className="btn primary">Logout</Logout> // Handle logout here if needed
                             ) : (
                                 <>
                                     <Link to="/signup" className="btn secondary">Sign Up</Link>

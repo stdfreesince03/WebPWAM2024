@@ -18,3 +18,6 @@ export async function loggedInStatus(req,res,next){ //for frontend
         return res.json({isLoggedIn: false});
     }
 }
+
+
+

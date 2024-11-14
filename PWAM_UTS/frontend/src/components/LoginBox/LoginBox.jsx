@@ -4,6 +4,7 @@ import './LoginBox.css';
 import api from '../../services/axios.js';
 import updateIsLoggedIn from "../../redux/slices/auth-thunks.js";
 import {useDispatch} from "react-redux";
+import {login} from "../../services/authservices.js";
 
 
 
@@ -25,28 +26,10 @@ export default function LoginBox() {
         const password = formData.get('password').trim();
         const role = formData.get('role').trim();
 
-        try{
-            const {data} = await api.post('/login',{
-                email,password,role
-            },{
-                withCredentials: true,
-                headers:{
-                    'Content-Type': 'application/json',
-                }
-            });
-
-            if (data.user) {
-                console.log('Login Successful');
-                dispatch(updateIsLoggedIn()); // Update Redux state
-                navigate('/');
-            }
-
-        }catch(error){
-            if (error.response) {
-                console.log(error.response.data.error);
-            } else {
-                console.log("An unexpected error occurred.");
-            }
+        try {
+            await login(email, password, role, dispatch, navigate); // Use login service
+        } catch (error) {
+            console.error("Login failed");
         }
 
 
