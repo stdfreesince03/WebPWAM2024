@@ -16,7 +16,7 @@ import LabGame from "./pages/LabGame.jsx";
 import LoginPage from './pages/Login.jsx';
 import SignUpPage from "./pages/SignUp.jsx";
 import updateIsLoggedIn from "./redux/slices/auth-thunks.js";
-import ProtectedRoute from "./layouts/ProtectedRoute.jsx";
+
 
 // console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
 

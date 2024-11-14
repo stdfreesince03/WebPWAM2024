@@ -6,6 +6,7 @@ export async function signUp(req,res){
 
     try {
         const { first_name,last_name,email, password, role } = req.body;
+        console.log(first_name+" "+last_name+" "+email+" "+password+" "+role);
 
         let { data: user, error: fetchErr } = await db
             .from(role)
@@ -36,7 +37,7 @@ export async function signUp(req,res){
 
         const token = jsonwebtoken.sign(
             { id: role === 'instructor' ? newUser.instructor_id : newUser.student_id, email },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET_KEY,
             { expiresIn: "30d" }
         );
 

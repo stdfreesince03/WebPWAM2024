@@ -3,11 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/SignUp.css';
 import { Form } from "react-router-dom";
 import api from '../services/axios.js';
+import {useDispatch} from "react-redux";
+import { signUp} from "../services/authservices.js";
 
 function SignUpPage() {
-    const navigate = useNavigate();
+
     const [error, setError] = useState(null);
     const [isInstructor, setIsInstructor] = useState(false);
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleToggle = () => {
         setIsInstructor((prev) => !prev);
@@ -24,24 +29,9 @@ function SignUpPage() {
         const role = isInstructor ? 'instructor' : 'student';
 
         try {
-            const { data } = await api.post('/signup', {
-                first_name: firstName,
-                last_name: lastName,
-                email,
-                password,
-                role,
-            });
-
-            if (data.user) {
-                console.log('Signup Successful');
-                navigate('/');
-            }
-        } catch (err) {
-            if (err.response) {
-                setError(err.response.data.error);
-            } else {
-                setError("An unexpected error occurred.");
-            }
+            await signUp(firstName,lastName,email,password,role,dispatch,navigate);
+        } catch (error) {
+            console.error("Signup failed bitch");
         }
     }
 
@@ -51,7 +41,7 @@ function SignUpPage() {
                 <h2 className="signup-title">Sign Up</h2>
                 <p className="signup-subtitle">Create an account to join us and explore our courses!</p>
 
-                <Form className="signup-form" onSubmit={handleSignup}>
+                <Form className="signup-form" onSubmit={(event)=>handleSignup(event)}>
                     <input type="text" name="first_name" placeholder="Enter your first name" className="signup-input" required />
                     <input type="text" name="last_name" placeholder="Enter your last name" className="signup-input" required />
                     <input type="email" name="email" placeholder="Enter your email" className="signup-input" required />

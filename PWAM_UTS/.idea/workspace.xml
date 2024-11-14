@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="login signup">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/statusController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/middleware/is-auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LogOutButton/Logout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LogOutButton/Logout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/redux/slices/auth-slice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/redux/slices/auth-thunks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/redux/store.js" afterDir="false" />
+    <list default="true" id="5e794cdf-0dbd-4f62-8c16-f3e8b5746268" name="Changes" comment="logout and lab route protection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/loginControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/loginControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginBox/LoginBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/IndexLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/IndexLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/signupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/signupController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/authservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/authservices.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +97,7 @@
       <workItem from="1731499012603" duration="5345000" />
       <workItem from="1731506434713" duration="4285000" />
       <workItem from="1731510755945" duration="13343000" />
-      <workItem from="1731560287643" duration="32073000" />
+      <workItem from="1731560287643" duration="44532000" />
     </task>
     <task id="LOCAL-00001" summary="I'm cooked">
       <option name="closed" value="true" />
@@ -158,7 +147,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731579267381</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="logout button">
+      <option name="closed" value="true" />
+      <created>1731595291686</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731595291686</updated>
+    </task>
+    <task id="LOCAL-00008" summary="logout and lab route protection">
+      <option name="closed" value="true" />
+      <created>1731603195930</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731603195931</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +189,8 @@
     <MESSAGE value="start backend bitch , NOWWW" />
     <MESSAGE value="backend otw. idk no more , live has no meaning" />
     <MESSAGE value="login signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="login signup" />
+    <MESSAGE value="logout button" />
+    <MESSAGE value="logout and lab route protection" />
+    <option name="LAST_COMMIT_MESSAGE" value="logout and lab route protection" />
   </component>
 </project>

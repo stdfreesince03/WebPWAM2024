@@ -43,3 +43,33 @@ export const logout = async (dispatch, navigate) => {
         throw error; // Rethrow to handle if needed
     }
 };
+
+// src/services/authServices.js
+export const signUp = async (firstName, lastName, email, password, role, dispatch, navigate) => {
+    try {
+        const { data } = await api.post('/signup', {
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            password,
+            role,
+        }, {
+            headers: {
+                'Content-Type': 'application/json', // Add this header to be explicit about JSON format
+            }
+        });
+
+        if (data.user) {
+            console.log('Signup Successful');
+            dispatch(updateIsLoggedIn());
+            navigate('/');
+        }
+    } catch (error) {
+        if (error.response) {
+            console.log(error.response.data.error);
+        } else {
+            console.log("An unexpected error occurred.");
+        }
+        throw error;
+    }
+};
